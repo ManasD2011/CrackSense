@@ -1,0 +1,35 @@
+# Python generated files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local configuration
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Jupyter runtime files
+.ipynb_checkpoints/
+
+# Generated inference output
+output/
+
+# Local video inputs and generated recordings
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Local experiment archive
+B2_Exp.zip
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
