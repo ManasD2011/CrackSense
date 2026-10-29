@@ -16,13 +16,13 @@ We started with CNN classification and U-Net segmentation on an F450 drone proje
 
 ### Drone and laptop during flight
 
-![Live_detection_test_pov — airborne drone and laptop displaying live crack segmentation](docs/images/project/live-flight-pov.gif)
+![Live_detection_test_pov — airborne drone and laptop displaying live crack segmentation](docs/images/project/live-flight-pov-web.gif)
 
 *External view of the drone in flight and the ground-station laptop processing its camera feed.*
 
 ### Ground-station laptop screen
 
-![Flight_test1 — ground-station screen showing raw video, crack mask and telemetry](docs/images/project/flight-dashboard-1.gif)
+![Flight_test1 — ground-station screen showing raw video, crack mask and telemetry](docs/images/project/flight-dashboard-1-web.gif)
 
 *Ground-station screen recording: raw camera view on the left, predicted crack mask overlay on the right, and processing, FPS and lidar information below.*
 
