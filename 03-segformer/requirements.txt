@@ -1,0 +1,17 @@
+# Install torch and torchvision for your platform/CUDA separately.
+# Working-environment metadata is recorded in phase 4 benchmarks; this is not a lockfile.
+transformers
+accelerate
+timm
+numpy
+opencv-python
+Pillow
+albumentations
+matplotlib
+scikit-image
+torchmetrics
+tqdm
+kaggle
+ipywidgets
+ipykernel
+jupyterlab

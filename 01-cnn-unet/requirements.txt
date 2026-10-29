@@ -1,0 +1,27 @@
+# Core ML
+tensorflow>=2.12.0
+keras>=2.12.0
+scikit-learn>=1.3.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+albumentations>=1.3.0
+
+# Image processing
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Dataset
+kagglehub>=0.2.0
+
+# Web 
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+
+# Notebook support
+ipykernel
+ipywidgets

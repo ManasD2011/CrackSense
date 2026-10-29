@@ -1,0 +1,17 @@
+# Separate file: keep phase2.yml for rollback. Stop its process before starting this one.
+logLevel: info
+rtsp: yes
+rtspTransports: [tcp]
+rtspAddress: :8554
+paths:
+  cam0:
+    source: rpiCamera
+    useAbsoluteTimestamp: true
+    rpiCameraCamID: 0
+    rpiCameraWidth: 1280
+    rpiCameraHeight: 720
+    rpiCameraFPS: 25
+    rpiCameraCodec: softwareH264
+    rpiCameraBitrate: 4000000
+    rpiCameraIDRPeriod: 25
+    rpiCameraH264Profile: baseline

@@ -1,3 +1,5 @@
+> Historical document: superseded by the [current repository guide](../../../README.md). Paths, status and claims below may be outdated.
+
 # CrackSense B2 Project Architecture and Workflow Report
 
 ## 1. Report Scope

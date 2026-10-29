@@ -33,3 +33,29 @@ B2_Exp.zip
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Local maintainer context (do not publish)
+/context.md
+
+# Publication exclusions
+**/[Kk]aggle.json
+**/*[Cc]redentials*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.pt
+*.pth
+*.h5
+*.keras
+*.onnx
+*.safetensors
+*.zip
+**/data/
+**/saved_models/
+**/Quantised/
+**/recordings/
+**/phase1_results/
+**/phase3_results/
+**/phase4_results/
+.venv-*/

@@ -1,0 +1,27 @@
+{
+  "processing": {
+    "count": 909,
+    "mean_ms": 24.747869197962594,
+    "median_ms": 23.081399966031313,
+    "p95_ms": 35.68742002826179,
+    "max_ms": 104.10160000901669
+  },
+  "decode_to_view": {
+    "count": 909,
+    "mean_ms": 42.33710286122971,
+    "median_ms": 39.7629999788478,
+    "p95_ms": 61.772980052046464,
+    "max_ms": 118.66909998934716
+  },
+  "skipped_waiting_frames": 412,
+  "errors": [],
+  "full_camera_latency_measured": false,
+  "elapsed_s": 54.0465873000212,
+  "received_frames": 1328,
+  "completed_inferences": 911,
+  "displayed_results": 909,
+  "raw_recorded_frames": 1328,
+  "processed_recorded_frames": 908,
+  "average_received_fps": 24.57139353180337,
+  "average_completed_inference_fps": 16.855827724059367
+}
