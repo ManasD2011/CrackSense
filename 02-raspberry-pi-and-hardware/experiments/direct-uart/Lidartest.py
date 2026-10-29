@@ -1,5 +1,5 @@
 import serial
-import time        
+import time
 
 PORT = "/dev/ttyAMA0"   # try this instead of /dev/serial0 on Pi 5 — confirm with `ls -l /dev/serial0`
 BAUD = 115200

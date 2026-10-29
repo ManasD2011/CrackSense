@@ -176,7 +176,7 @@ def camera_loop():
         # ----------------------------------------------------
 
         frame = picam2.capture_array()
-        
+
         gray = cv2.cvtColor(
             frame,
             cv2.COLOR_RGB2GRAY

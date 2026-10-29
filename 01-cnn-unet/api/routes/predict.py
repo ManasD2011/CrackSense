@@ -62,10 +62,10 @@ def predict():
 
         # ── Segmentation (UNet only) ──────────────────────────────────────────
         seg_result = segment(image_bgr)
-        
+
         # ── Derive intensity and label from crack coverage ──────────────────
         crack_coverage = seg_result["crack_coverage"]
-        
+
         if crack_coverage < 0.1:
             label = "no_crack"
             intensity = "NONE"

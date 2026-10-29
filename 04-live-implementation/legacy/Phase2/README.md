@@ -91,9 +91,9 @@ Command:
 
 ffplay.exe -version
 
-ffplay.exe -rtsp_transport tcp -fflags nobuffer -flags low_delay -framedrop -noinfbuf -an rtsp://10.207.215.185:8554/cam0  
-  
-**Step5: run virtual environment from the root directory** 
+ffplay.exe -rtsp_transport tcp -fflags nobuffer -flags low_delay -framedrop -noinfbuf -an rtsp://10.207.215.185:8554/cam0
+
+**Step5: run virtual environment from the root directory**
 
 D:\Web development\Crack_Detection_Project>
 
@@ -103,6 +103,6 @@ D:\Web development\Crack_Detection_Project>
 
 cd B2_Exp
 
-python .\Live_Implementation\Phase3\laptop_live_[inference.py](http://inference.py) --stream rtsp://10.207.215.185:8554/cam0 --checkpoint Quantised/latest_[fp16.pt](http://fp16.pt) --duration 900  
+python .\Live_Implementation\Phase3\laptop_live_[inference.py](http://inference.py) --stream rtsp://10.207.215.185:8554/cam0 --checkpoint Quantised/latest_[fp16.pt](http://fp16.pt) --duration 900
 
 </details>

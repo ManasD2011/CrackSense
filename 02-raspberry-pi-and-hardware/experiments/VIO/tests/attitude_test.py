@@ -11,7 +11,7 @@ Outputs:
     Pitch (deg)
     Yaw (deg)
 
-Author: Ralkar 
+Author: Ralkar
 """
 
 from common import connect
