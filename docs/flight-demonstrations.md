@@ -1,16 +1,16 @@
 # Animated flight demonstrations
 
-These original project GIFs document the live demonstration. They are kept on this separate page because each is approximately 12 MB. The main README uses still photographs.
+These project GIFs document the live demonstration. Web copies are optimized for download size while retaining their frame counts, dimensions, full durations and looping. The main README also embeds the external flight view and the first ground-station screen recording.
 
 The paired dashboard shows the raw frame at left, red predicted mask at right, and processing/range diagnostics below. These clips are qualitative evidence of operation, not a ground-truth accuracy benchmark or a full camera-to-screen timing measurement. The display labels its association as approximate message-time matching.
 
 [Live implementation and startup](../04-live-implementation/README.md) · [Photo gallery](project-gallery.md)
 
-## Dashboard recording 1
+## Ground-station laptop screen view
 
 ![Animated raw and processed camera views with range diagnostics](images/project/flight-dashboard-1.gif)
 
-The camera viewpoint moves along the wall while the predicted red overlay and range information update.
+Source: `Flight_test1.gif`. This is a ground-station laptop screen recording showing the raw camera feed, crack mask overlay, processing statistics and lidar information.
 
 ## Dashboard recording 2
 

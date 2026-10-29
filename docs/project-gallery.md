@@ -1,6 +1,6 @@
 # Project photo gallery
 
-Photographs from the project’s development, testing and presentation. Captions describe visible content and the supplied project context. The original files are preserved without image edits; descriptive repository filenames and source hashes are recorded in [the image manifest](images/project/manifest.json).
+Photographs from the project’s development, testing and presentation. Captions describe visible content and the supplied project context. Photographs are preserved without edits; animated GIFs have optimized web encodings. Descriptive repository filenames and source/published hashes are recorded in [the image manifest](images/project/manifest.json).
 
 [Main project guide](../README.md) · [Animated demonstrations](flight-demonstrations.md)
 

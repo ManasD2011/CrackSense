@@ -4,11 +4,33 @@ Drone-assisted crack segmentation, from our initial CNN and U-Net experiments to
 
 We started with CNN classification and U-Net segmentation on an F450 drone project. The initial 1000 KV motor setup did not provide sufficient stability in our build, and model accuracy was unsatisfactory. **We did not test those models on a real drone feed.** We then trained and tested SegFormer B0, B1 and B2, upgraded to 920 KV DJI motors, integrated a Raspberry Pi 5, IMX219 camera and two TFmini-S lidars, and developed live laptop processing.
 
-<img src="docs/images/project/project-lab-overview.jpeg" alt="CrackSense drone with its Raspberry Pi camera, laptop segmentation dashboard and project report" width="760">
-
-*The assembled inspection platform and ground-station laptop in the lab. The screen shows paired raw and processed views.*
-
 [Project photo gallery](docs/project-gallery.md) · [Animated flight demonstrations](docs/flight-demonstrations.md)
+
+## The assembled drone
+
+<img src="docs/images/project/drone-v2-front.jpeg" alt="Front view of the upgraded 920 KV drone with onboard camera and Raspberry Pi" width="760">
+
+*Front view of the upgraded aircraft used for camera and live inspection work.*
+
+## Live crack detection
+
+### Drone and laptop during flight
+
+![Live_detection_test_pov — airborne drone and laptop displaying live crack segmentation](docs/images/project/live-flight-pov.gif)
+
+*External view of the drone in flight and the ground-station laptop processing its camera feed.*
+
+### Ground-station laptop screen
+
+![Flight_test1 — ground-station screen showing raw video, crack mask and telemetry](docs/images/project/flight-dashboard-1.gif)
+
+*Ground-station screen recording: raw camera view on the left, predicted crack mask overlay on the right, and processing, FPS and lidar information below.*
+
+### Handheld camera testing
+
+<img src="docs/images/project/handheld-testing-closeup.jpeg" alt="HandheldTesting_of_crackDetection_view2 — drone camera facing wall damage with a predicted overlay on the laptop" width="480">
+
+*Handheld testing of the camera-to-laptop segmentation pipeline before flight demonstration.*
 
 ## Start here
 
@@ -59,12 +81,6 @@ The Pi does not run the final live segmentation model. Lidar ranges annotate the
 Saved checkpoint outputs show validation Dice of 0.7711, 0.7827 and 0.7910 for B0, B1 and B2 respectively. These are **validation values**, not test accuracy. A saved FP16 benchmark measured 16.59 ms processing time; a later live session measured 23.75 ms mean processing time. Neither measures full camera-to-screen latency. See [results and limitations](docs/results-and-limitations.md) for the evidence and timing scopes.
 
 The repository includes the available source, historical experiments and selected run summaries. Empty placeholders and incomplete prototypes are labelled in the file index. Datasets, model weights and large recordings are not included; [dataset access](03-segformer/datasets/README.md) and [checkpoint setup](03-segformer/checkpoints/README.md) explain the prerequisites.
-
-## Team and project guide
-
-<img src="docs/images/project/team-and-guide.jpeg" alt="CrackSense project team and guide together in the lab" width="640">
-
-*The project team with their guide.*
 
 ## Reuse and contributions
 

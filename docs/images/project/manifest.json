@@ -62,19 +62,28 @@
   {
     "source": "Fight_test2.gif",
     "published": "flight-dashboard-2.gif",
-    "bytes": 11885279,
-    "sha256": "59288cc91c3bd9001e8fe65fac3d961d7fdf17a881bbadb3a84bb315180bfe7c"
+    "bytes": 9897598,
+    "sha256": "8fc0e97b7a8b9b6747d30482f906b19843063d1b38f1f2730d340e727588e455",
+    "source_sha256": "59288cc91c3bd9001e8fe65fac3d961d7fdf17a881bbadb3a84bb315180bfe7c",
+    "source_bytes": 11885279,
+    "encoding": "Optimized looping GIF; up to 128 colors per frame; original frame count, dimensions and duration retained"
   },
   {
     "source": "Flight_test1.gif",
     "published": "flight-dashboard-1.gif",
-    "bytes": 12877510,
-    "sha256": "765721de844bd69ff203caf4bcdf86012e7dc7c49a7acc6793806009a0972520"
+    "bytes": 8436967,
+    "sha256": "fbba9f8a92cb636b926e1e10c341a15bc7a139e06278eff9cb294b2b5561bf2f",
+    "source_sha256": "765721de844bd69ff203caf4bcdf86012e7dc7c49a7acc6793806009a0972520",
+    "source_bytes": 12877510,
+    "encoding": "Optimized looping GIF; up to 64 colors per frame; original frame count, dimensions and duration retained"
   },
   {
     "source": "Live_detection_test_pov.gif",
     "published": "live-flight-pov.gif",
-    "bytes": 11897658,
-    "sha256": "ceb1657fa51f41655adcd223f11e27c5b8c5cd57fb921727f6327890c5cee308"
+    "bytes": 8690579,
+    "sha256": "d88ed6108c847e1749fe2f299374b0b02ea8030715996114d9ddba91a13ec29d",
+    "source_sha256": "ceb1657fa51f41655adcd223f11e27c5b8c5cd57fb921727f6327890c5cee308",
+    "source_bytes": 11897658,
+    "encoding": "Optimized looping GIF; up to 64 colors per frame; original frame count, dimensions and duration retained"
   }
 ]
