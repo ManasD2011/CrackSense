@@ -19,6 +19,14 @@ Start with [the ordered startup guide](docs/startup-sequence.md). Prerequisites 
 
 Keep this phase folder intact on both devices: entrypoints resolve sibling `shared/` modules relative to their own files. Copying only the sender is insufficient. Run documented commands from this phase root; checkpoint paths are relative to your working directory unless absolute.
 
+## Live demonstration
+
+<img src="../docs/images/project/flight-with-laptop.jpeg" alt="Airborne drone near a wall with the laptop showing raw video and a red crack overlay" width="440">
+
+*The drone and paired laptop display during a flight demonstration. The photographs and clips provide qualitative evidence of live operation; numerical performance remains documented separately.*
+
+[Watch the animated demonstrations](../docs/flight-demonstrations.md) · [Handheld and flight photo gallery](../docs/project-gallery.md)
+
 ## Outputs and limits
 
 The dashboard pairs the same raw frame and processed overlay with frame IDs, inference timing, FPS, ranges and timing status. `--record` enables video output; `S` saves a snapshot and `Q` exits. Metadata and summaries are written under `phase4_results/` unless `--output` changes it.

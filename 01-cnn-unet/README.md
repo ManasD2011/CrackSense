@@ -13,6 +13,12 @@ The initial build used F450, 1000 KV motors, 40 A ESCs, FS-i6 radio, Pixhawk 2.4
 | `src/utils/config.py` | Image sizes, model paths, training settings |
 | `api/main.py` and `frontend/` | Flask API and browser demo on the computer |
 
+## Initial aircraft
+
+<img src="../docs/images/project/drone-v1.jpeg" alt="Top view of the initial F450 build before the Raspberry Pi camera integration" width="420">
+
+*The original aircraft build associated with the CNN/U-Net development stage. Those models were not tested on a real drone feed.*
+
 ## Run sequence
 
 From the repository root, create an environment dedicated to this TensorFlow phase:

@@ -4,6 +4,12 @@
 
 Use the [confirmed wiring](../docs/hardware-and-wiring.md). Keep the aircraft disarmed and propellers removed for bench work. The following sensor tests do not require running the guided-flight experiments.
 
+## Upgraded onboard platform
+
+<img src="../docs/images/project/drone-v2-top.jpeg" alt="Top view of the upgraded drone showing the Pi enclosure, camera ribbon and onboard electronics" width="760">
+
+*The upgraded 920 KV build with onboard computing and camera integration. Use the confirmed wiring guide for electrical connections; this photo shows physical placement.*
+
 ## Proceed in this order
 
 | Step | Run or read | Expected checkpoint |

@@ -1,0 +1,80 @@
+[
+  {
+    "source": "AssembledDrone_920kvMotor_v2_frontView.jpeg",
+    "published": "drone-v2-front.jpeg",
+    "bytes": 113957,
+    "sha256": "702f11415bfb4dc2be3205f6c120d68da555b9db79cb665d93cba478d8232151"
+  },
+  {
+    "source": "AssembledDrone_920kvMotor_v2_topView.jpeg",
+    "published": "drone-v2-top.jpeg",
+    "bytes": 183991,
+    "sha256": "f47c49e7b5c3a0559703543100e440e12a57012ee080ad8e76ef7ed7c321a8fb"
+  },
+  {
+    "source": "AssembledDrone_img_V1.jpeg",
+    "published": "drone-v1.jpeg",
+    "bytes": 152543,
+    "sha256": "14b8521a72514cde67bb00f09675a6e3129460f3f433ae9087054f4058c21a8b"
+  },
+  {
+    "source": "FlightTest_with_liveCrackDetection.jpeg",
+    "published": "flight-with-laptop.jpeg",
+    "bytes": 99662,
+    "sha256": "8878e9b3cb4266be644185704e433a31ac54488870a45fa47496b7106aefedf7"
+  },
+  {
+    "source": "HandheldTesting_of_crackDetection.jpeg",
+    "published": "handheld-testing.jpeg",
+    "bytes": 113119,
+    "sha256": "17628a399cb36526177a416b6a4524ee13ee3c20f412c1bbd5d18665dd69dbab"
+  },
+  {
+    "source": "HandheldTesting_of_crackDetection_view2.jpeg",
+    "published": "handheld-testing-closeup.jpeg",
+    "bytes": 98658,
+    "sha256": "388bc8335d8612197b3d1a9d8066d94cb8b237dc53600187622cfba45e0467df"
+  },
+  {
+    "source": "LiveTesting_during_flight.jpeg",
+    "published": "live-flight-testing.jpeg",
+    "bytes": 83688,
+    "sha256": "84ec0007adbaf16e456ac9d19884c9b56b0bec13eeab904cead2b3ce6a6557b1"
+  },
+  {
+    "source": "OurTeam_&_Guide.jpeg",
+    "published": "team-and-guide.jpeg",
+    "bytes": 169768,
+    "sha256": "130078b71d9fc3765cb36c81ecad190129147de055b73b8ac6e83c9818f69b02"
+  },
+  {
+    "source": "Project_Blackbook_img.jpeg",
+    "published": "project-and-blackbooks.jpeg",
+    "bytes": 1824850,
+    "sha256": "724bfa17efe659558eef1576194de9257010cd5d15cf2ba49b6aff49debd16fe"
+  },
+  {
+    "source": "Project_blackBook_Lab_img.jpeg",
+    "published": "project-lab-overview.jpeg",
+    "bytes": 1242167,
+    "sha256": "021ef01a30123d5cc335163356aec66584059fcec938253b65d04b383c21bc90"
+  },
+  {
+    "source": "Fight_test2.gif",
+    "published": "flight-dashboard-2.gif",
+    "bytes": 11885279,
+    "sha256": "59288cc91c3bd9001e8fe65fac3d961d7fdf17a881bbadb3a84bb315180bfe7c"
+  },
+  {
+    "source": "Flight_test1.gif",
+    "published": "flight-dashboard-1.gif",
+    "bytes": 12877510,
+    "sha256": "765721de844bd69ff203caf4bcdf86012e7dc7c49a7acc6793806009a0972520"
+  },
+  {
+    "source": "Live_detection_test_pov.gif",
+    "published": "live-flight-pov.gif",
+    "bytes": 11897658,
+    "sha256": "ceb1657fa51f41655adcd223f11e27c5b8c5cd57fb921727f6327890c5cee308"
+  }
+]

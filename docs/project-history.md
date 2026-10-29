@@ -17,3 +17,15 @@ The team moved to SegFormer, trained B0, B1 and B2, and tested them on test data
 MediaMTX on the Pi streams IMX219 video. A Pi sender reads MAVLink measurements from Pixhawk and sends timestamped UDP telemetry. The laptop decodes frames, associates eligible ranges, runs SegFormer and displays paired raw/processed images. Saved sessions demonstrate operation and observed timing mappings. Physical acquisition-time synchronization, full visual latency and a quantitative airborne accuracy campaign are not established by those logs.
 
 [Hardware](hardware-and-wiring.md) · [Data flow](system-data-flow.md) · [Results](results-and-limitations.md)
+
+## Photographic development record
+
+<img src="images/project/drone-v1.jpeg" alt="Original F450 assembly" width="360">
+
+*Initial aircraft assembly.*
+
+<img src="images/project/drone-v2-front.jpeg" alt="Upgraded F450 with camera and Raspberry Pi enclosure" width="640">
+
+*Later integrated aircraft.*
+
+The [project gallery](project-gallery.md) includes handheld testing and photographs of airborne operation with the laptop display. [Flight clips](flight-demonstrations.md) show the qualitative live demonstration. These images supplement the saved session logs without assigning a specific log or measured accuracy to a photograph.

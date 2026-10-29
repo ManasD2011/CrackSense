@@ -20,3 +20,13 @@ The diagram shows 3S LiPo → power module → F450 distribution board; ESC powe
 The older data-flow PNG reversed the two lidar port labels. It is not published as an authoritative diagram here; the [Mermaid flow](system-data-flow.md) uses the confirmed assignments. MAVLink sensor ID 0/1 is not a serial-port number. The live defaults are wall ID 0/orientation 0 and ground ID 1/orientation 25; verify by moving targets independently.
 
 Mission Planner was used for configuration and tuning. An exported, verified flight-controller parameter file is not included, so this repository does not prescribe a universal parameter set for another aircraft.
+
+## Physical assembly
+
+<img src="images/project/drone-v2-front.jpeg" alt="Front view of the upgraded F450 showing camera mounting and landing gear" width="760">
+
+*Front view of the upgraded aircraft.*
+
+<img src="images/project/drone-v2-top.jpeg" alt="Top view of the Raspberry Pi enclosure and onboard wiring" width="760">
+
+*Top view of the mounted electronics. Refer to the connection diagram above for ports and power routing.*
