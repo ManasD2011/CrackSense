@@ -1,87 +1,102 @@
 # CrackSense
 
-Drone-assisted crack segmentation, from our initial CNN and U-Net experiments to a live SegFormer inspection pipeline.
+### UAV-based crack detection using deep learning
 
-We started with CNN classification and U-Net segmentation on an F450 drone project. The initial 1000 KV motor setup did not provide sufficient stability in our build, and model accuracy was unsatisfactory. **We did not test those models on a real drone feed.** We then trained and tested SegFormer B0, B1 and B2, upgraded to 920 KV DJI motors, integrated a Raspberry Pi 5, IMX219 camera and two TFmini-S lidars, and developed live laptop processing.
+CrackSense is a drone-assisted inspection prototype that combines aerial imaging, deep-learning segmentation and distance sensing to help identify visible cracks on structural surfaces. It was developed to support inspection of areas that are difficult to access and to present camera images with pixel-level crack predictions for human review.
 
-[Project photo gallery](docs/project-gallery.md) · [Animated flight demonstrations](docs/flight-demonstrations.md)
+The system uses an F450 quadcopter equipped with a Raspberry Pi 5, an IMX219 camera and two Benewake TFmini-S lidar sensors. During live operation, the Pi transmits video and flight-controller telemetry to a ground-station laptop. The laptop runs SegFormer and displays the original image, predicted crack mask and available distance measurements. The pilot controls the aircraft; model predictions support inspection and do not command flight.
 
-## The assembled drone
+[Getting started](docs/getting-started.md) · [System architecture](docs/system-data-flow.md) · [Hardware and wiring](docs/hardware-and-wiring.md) · [Results](docs/results-and-limitations.md)
 
-<img src="docs/images/project/drone-v2-front.jpeg" alt="Front view of the upgraded 920 KV drone with onboard camera and Raspberry Pi" width="760">
+## Prototype and testing
 
-*Front view of the upgraded aircraft used for camera and live inspection work.*
+<table>
+<tr>
+<th width="50%">Assembled inspection drone</th>
+<th width="50%">Handheld inspection test</th>
+</tr>
+<tr>
+<td align="center"><img src="docs/images/project/drone-v2-front.jpeg" alt="Front view of the F450 inspection drone with upgraded motors and onboard camera" height="300"></td>
+<td align="center"><img src="docs/images/project/handheld-testing-closeup.jpeg" alt="Handheld camera test near a wall with the predicted segmentation overlay displayed on a laptop" height="300"></td>
+</tr>
+<tr>
+<td>Upgraded F450 platform with 920 KV motors and onboard sensing.</td>
+<td>Camera-to-laptop processing checked with the aircraft held near the inspection surface.</td>
+</tr>
+</table>
 
-## Live crack detection
+## Live demonstration
 
-### Drone and laptop during flight
+<table>
+<tr>
+<th width="30%">Inspection during flight</th>
+<th width="70%">Ground-station segmentation display</th>
+</tr>
+<tr>
+<td align="center" valign="middle"><img src="docs/images/project/live-flight-pov-web.gif" alt="Drone operating near a wall while the ground-station laptop displays live inspection results" width="210"></td>
+<td align="center" valign="middle"><img src="docs/images/project/flight-dashboard-1-web.gif" alt="Laptop screen recording showing the original camera frame, red predicted crack mask and telemetry" width="560"></td>
+</tr>
+<tr>
+<td>External view of the aircraft and laptop during a flight demonstration.</td>
+<td>Original camera image on the left; predicted crack overlay on the right, with processing statistics and available lidar readings below.</td>
+</tr>
+</table>
 
-![Live_detection_test_pov — airborne drone and laptop displaying live crack segmentation](docs/images/project/live-flight-pov-web.gif)
+These demonstrations show the integrated system in operation. Quantitative model results and timing measurements are documented separately in [results and limitations](docs/results-and-limitations.md). View the [photo gallery](docs/project-gallery.md) or [additional recordings](docs/flight-demonstrations.md) for more examples.
 
-*External view of the drone in flight and the ground-station laptop processing its camera feed.*
-
-### Ground-station laptop screen
-
-![Flight_test1 — ground-station screen showing raw video, crack mask and telemetry](docs/images/project/flight-dashboard-1-web.gif)
-
-*Ground-station screen recording: raw camera view on the left, predicted crack mask overlay on the right, and processing, FPS and lidar information below.*
-
-### Handheld camera testing
-
-<img src="docs/images/project/handheld-testing-closeup.jpeg" alt="HandheldTesting_of_crackDetection_view2 — drone camera facing wall damage with a predicted overlay on the laptop" width="480">
-
-*Handheld testing of the camera-to-laptop segmentation pipeline before flight demonstration.*
-
-## Start here
-
-| Goal | Reading and execution path |
-|---|---|
-| Understand the whole project | [History](docs/project-history.md) → phases 1–4 below |
-| Build and test the onboard system | [Pi and hardware guide](02-raspberry-pi-and-hardware/README.md) → [live startup](04-live-implementation/docs/startup-sequence.md) |
-| Train or inspect the models | [SegFormer](03-segformer/README.md) → [training](03-segformer/training/README.md) → [evaluation](03-segformer/evaluation/README.md) |
-| Run live inference with a trained checkpoint | [Checkpoint requirements](03-segformer/checkpoints/README.md) → [live implementation](04-live-implementation/README.md) |
-| Find what a particular file does | [Complete file index](docs/file-index.md) |
-
-## Four project phases
-
-1. [CNN and U-Net](01-cnn-unet/README.md): historical training notebooks, model code and offline web demo.
-2. [Raspberry Pi and hardware](02-raspberry-pi-and-hardware/README.md): ordered camera, communication and lidar bring-up; separate navigation experiments.
-3. [SegFormer](03-segformer/README.md): training notebooks, B0/B1/B2 walkthroughs, offline inference and model packaging.
-4. [Live implementation](04-live-implementation/README.md): Pi video/telemetry transmission and laptop decoding, range association, inference and recording.
-
-Folder numbers give a useful build order. The historical sequence was CNN/U-Net → transformer development → upgraded hardware integration → live implementation.
-
-## Where the code runs
-
-| Device | Responsibility | Code |
-|---|---|---|
-| Training computer | Train CNN/U-Net or SegFormer; evaluate and export models | Phases 1 and 3 |
-| Pixhawk 2.4.8 | Flight control and both lidar interfaces | Configured through Mission Planner; no custom firmware supplied |
-| Raspberry Pi 5 | IMX219 capture, MediaMTX stream, Pixhawk MAVLink reception, UDP sender | Phase 2 and `04-live-implementation/raspberry-pi/` |
-| Ground-station laptop | Receive video and telemetry; run SegFormer on CUDA; display masks and ranges | `04-live-implementation/ground-station/` |
+## How the system works
 
 ```mermaid
 flowchart LR
-  C[IMX219] -->|CSI| P[Raspberry Pi 5]
-  G[Ground TFmini-S] -->|TELEM2| X[Pixhawk 2.4.8]
-  W[Wall TFmini-S] -->|SERIAL4/5| X
-  X -->|USB MAVLink| P
-  P -->|RTSP video TCP 8554| V[Laptop video decoder]
-  P -->|JSON telemetry UDP 5005| T[Laptop sensor history]
-  V --> A[Frame and range association]
-  T --> A
-  A --> M[SegFormer FP16 on laptop GPU]
-  M --> D[Raw frame and crack overlay dashboard]
+  C[IMX219 camera] --> P[Raspberry Pi 5]
+  L[Ground and wall lidar sensors] --> X[Pixhawk flight controller]
+  X -->|MAVLink over USB| P
+  P -->|Video and telemetry over Wi-Fi| G[Ground-station laptop]
+  G --> S[SegFormer crack segmentation]
+  S --> D[Camera image, crack overlay and distances]
 ```
 
-The Pi does not run the final live segmentation model. Lidar ranges annotate the results; they are not neural-network inputs or flight commands. [Detailed data flow](docs/system-data-flow.md).
+The Pi handles image capture and communication; the laptop performs segmentation. Lidar readings provide distance context alongside the image. They are not model inputs or validated crack-width measurements. The [detailed architecture](docs/system-data-flow.md) explains streaming, telemetry and frame association.
 
-## Results and status
+## Explore the repository
 
-Saved checkpoint outputs show validation Dice of 0.7711, 0.7827 and 0.7910 for B0, B1 and B2 respectively. These are **validation values**, not test accuracy. A saved FP16 benchmark measured 16.59 ms processing time; a later live session measured 23.75 ms mean processing time. Neither measures full camera-to-screen latency. See [results and limitations](docs/results-and-limitations.md) for the evidence and timing scopes.
+The repository is organised into four learning and implementation phases. Each phase has its own setup instructions and explains where its code runs.
 
-The repository includes the available source, historical experiments and selected run summaries. Empty placeholders and incomplete prototypes are labelled in the file index. Datasets, model weights and large recordings are not included; [dataset access](03-segformer/datasets/README.md) and [checkpoint setup](03-segformer/checkpoints/README.md) explain the prerequisites.
+| Phase | What you will learn | Execution environment |
+|---|---|---|
+| [1. CNN and U-Net](01-cnn-unet/README.md) | Initial classification and segmentation models, training notebooks and offline demonstration | Training or development computer |
+| [2. Raspberry Pi and hardware](02-raspberry-pi-and-hardware/README.md) | Camera checks, calibration, MAVLink communication and dual-lidar testing | Raspberry Pi; Mission Planner on the laptop |
+| [3. SegFormer](03-segformer/README.md) | Dataset preparation, training, model evaluation and deployment packaging | Training computer or GPU laptop |
+| [4. Live implementation](04-live-implementation/README.md) | Video and telemetry transmission, laptop inference, dashboard and recording | Raspberry Pi and ground-station laptop |
 
-## Reuse and contributions
+**New to the project?** Follow the [getting-started guide](docs/getting-started.md). It explains the terminology, prerequisites and recommended sequence. Historical and experimental folders are optional reference material; they are not part of the default live setup.
 
-Read [contribution and validation guidance](CONTRIBUTING.md) before changing execution paths. A code license has not yet been selected by the project owner; public availability does not itself grant an open-source license. Dataset and dependency terms are separate. Credentials and local environments are excluded from source control.
+## Project development
+
+Development began with CNN classification and U-Net segmentation alongside an F450 aircraft using 1000 KV motors. Model performance and aircraft stability were insufficient for the intended demonstration, so these models were evaluated offline and were not tested on a live drone feed.
+
+The project then progressed to SegFormer B0, B1 and B2 training and testing, followed by a 920 KV motor upgrade and integration of the Pi, camera and lidar sensors. Camera calibration, MAVLink communication and subsystem tests preceded live laptop processing. See the [development history](docs/project-history.md) for the complete sequence. Folder numbering follows the recommended learning order rather than the exact chronology.
+
+## Models, data and results
+
+SegFormer predicts a binary crack mask: each pixel is classified as crack or background. Training used image–mask pairs from CrackSeg9k and CrackVision12K; the [dataset guide](03-segformer/datasets/README.md) explains access and preparation.
+
+| Model | Recorded validation Dice |
+|---|---:|
+| SegFormer B0 | 0.7711 |
+| SegFormer B1 | 0.7827 |
+| SegFormer B2 | 0.7910 |
+
+Dice measures overlap between predicted and reference masks. These values come from saved checkpoint validation records and are not test accuracy. B2 was carried forward into deployment experiments, with FP16 inference on the laptop GPU. See [evaluation and performance details](docs/results-and-limitations.md) for measurement conditions and remaining limitations.
+
+Datasets and trained weights are not bundled. To reproduce inference, provide a compatible model using the [checkpoint guide](03-segformer/checkpoints/README.md). The system remains a research prototype: thin cracks, surface texture and image conditions can affect predictions, and structural assessment remains the responsibility of a qualified inspector.
+
+## Further documentation
+
+- [Hardware connections and component configuration](docs/hardware-and-wiring.md)
+- [Step-by-step live startup](04-live-implementation/docs/startup-sequence.md)
+- [Troubleshooting](04-live-implementation/docs/troubleshooting.md)
+- [Code reference by execution environment](docs/file-index.md)
+- [Contribution and validation guidance](CONTRIBUTING.md)
+
+A repository license has not yet been selected. Contact the project owner about reuse; datasets and dependencies retain their respective terms.

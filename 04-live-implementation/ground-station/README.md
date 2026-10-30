@@ -1,3 +1,11 @@
-# ground-station
+# Ground-station processing
 
-Runs on the ground-station laptop. laptop_dashboard.py provides probe, preview and GPU inference; rtsp_video.py receives and decodes video; model.py runs the segmentation model. Keep ../shared/ available. Follow [startup sequence](../docs/startup-sequence.md).
+The laptop receives camera frames and telemetry, runs SegFormer, and displays the original image alongside the predicted crack overlay and distance readings.
+
+| Module | Responsibility |
+|---|---|
+| `laptop_dashboard.py` | Reception checks, preview, GPU inference, display and recording |
+| `rtsp_video.py` | Video reception and decoding |
+| `model.py` | SegFormer preprocessing and segmentation |
+
+Preserve the adjacent `shared/` folder. Follow the [startup sequence](../docs/startup-sequence.md), beginning with reception checks before loading a model.

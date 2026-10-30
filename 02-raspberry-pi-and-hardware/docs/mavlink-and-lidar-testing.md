@@ -28,4 +28,4 @@ Move a target in front of each lidar separately to verify direction/identity. Di
 
 `Lidartest.py` under `experiments/direct-uart/` parses a lidar directly on Pi UART. It is not the recommended route for the final build, where both lidars connect through Pixhawk. Several VIO tests such as `battery_test.py` and `distance_sensor_test.py` are placeholders, not completed diagnostics.
 
-Stop every test and earlier dashboard before the [live sender](../../04-live-implementation/README.md) owns the serial connection. Correct link from this guide: [live startup](../../04-live-implementation/docs/startup-sequence.md).
+Stop every test and earlier dashboard before the [live sender](../../04-live-implementation/README.md) owns the serial connection. Continue with [live startup](../../04-live-implementation/docs/startup-sequence.md).

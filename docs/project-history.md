@@ -20,12 +20,9 @@ MediaMTX on the Pi streams IMX219 video. A Pi sender reads MAVLink measurements 
 
 ## Photographic development record
 
-<img src="images/project/drone-v1.jpeg" alt="Original F450 assembly" width="360">
+<table>
+<tr><td width="50%" align="center"><img src="images/project/drone-v1.jpeg" alt="Initial F450 assembly used during offline model development." height="280"></td><td width="50%" align="center"><img src="images/project/drone-v2-front.jpeg" alt="Upgraded aircraft used for camera and live inspection integration." height="280"></td></tr>
+<tr><td>Initial F450 assembly used during offline model development.</td><td>Upgraded aircraft used for camera and live inspection integration.</td></tr>
+</table>
 
-*Initial aircraft assembly.*
-
-<img src="images/project/drone-v2-front.jpeg" alt="Upgraded F450 with camera and Raspberry Pi enclosure" width="640">
-
-*Later integrated aircraft.*
-
-The [project gallery](project-gallery.md) includes handheld testing and photographs of airborne operation with the laptop display. [Flight clips](flight-demonstrations.md) show the qualitative live demonstration. These images supplement the saved session logs without assigning a specific log or measured accuracy to a photograph.
+See the [project gallery](project-gallery.md) for additional photographs.

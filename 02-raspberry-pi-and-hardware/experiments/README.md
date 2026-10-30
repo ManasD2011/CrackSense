@@ -1,3 +1,11 @@
-# experiments
+# Optional hardware experiments
 
-Preserved Raspberry Pi experiments. VIO/ includes ArUco, optical flow, command-capable guided/mode tests and incomplete scaffolding. direct-uart/ is an older wiring approach. optic_flow_v1.py is a camera motion experiment. None is required by the final crack segmentation startup sequence.
+These experiments preserve development work beyond the default inspection pipeline. They are not required for live crack segmentation.
+
+| Area | Purpose |
+|---|---|
+| [Visual navigation](VIO/README.md) | ArUco markers, optical flow, telemetry and flight-control exploration |
+| [Direct UART communication](direct-uart/README.md) | Earlier lidar and serial loopback tests |
+| `optic_flow_v1.py` | Camera-motion experiment |
+
+Some visual-navigation scripts can issue flight commands; others are incomplete prototypes. Review the relevant guide before use. For the supported setup sequence, return to [hardware integration](../README.md).

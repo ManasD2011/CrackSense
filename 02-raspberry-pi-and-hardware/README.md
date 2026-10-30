@@ -1,6 +1,8 @@
-# Phase 2 — Raspberry Pi and hardware bring-up
+# Phase 2 — Raspberry Pi and hardware integration
 
-**Runs on:** Raspberry Pi 5, except Mission Planner on the laptop. **Purpose:** verify acquisition and communication before live inference.
+[Project overview](../README.md) · [Getting started](../docs/getting-started.md)
+
+This phase verifies the onboard camera, flight-controller connection and distance sensors before live segmentation. Diagnostic scripts run on the Raspberry Pi 5; Mission Planner runs on the laptop for flight-controller configuration.
 
 Use the [confirmed wiring](../docs/hardware-and-wiring.md). Keep the aircraft disarmed and propellers removed for bench work. The following sensor tests do not require running the guided-flight experiments.
 
@@ -10,7 +12,7 @@ Use the [confirmed wiring](../docs/hardware-and-wiring.md). Keep the aircraft di
 
 *The upgraded 920 KV build with onboard computing and camera integration. Use the confirmed wiring guide for electrical connections; this photo shows physical placement.*
 
-## Proceed in this order
+## Recommended test sequence
 
 | Step | Run or read | Expected checkpoint |
 |---|---|---|
@@ -27,10 +29,10 @@ Steps 4–6 are detailed in [MAVLink and lidar testing](docs/mavlink-and-lidar-t
 ## Folder roles
 
 - `tests/camera/`: Picamera2 FPS test plus older V4L2/DirectShow camera probes.
-- `tests/telemetry/`: recommended USB MAVLink bring-up scripts.
+- `tests/telemetry/`: recommended USB MAVLink communication tests.
 - `camera/`: simple Flask camera streaming experiment.
 - `dashboard/`: earlier Pi-hosted multi-camera/telemetry dashboard; not the final laptop segmentation UI.
 - `experiments/direct-uart/`: earlier direct-UART and loopback experiments; not the final USB Pixhawk route.
 - `experiments/VIO/`: preserved ArUco, optical flow, telemetry and flight-control exploration, including placeholders. Read its README first.
 
-These hardware-facing scripts are manual diagnostics, not an automated test suite. Do not run blanket pytest/unittest discovery over this phase. [Full file index](../docs/file-index.md).
+These hardware-facing scripts are manual diagnostics, not an automated test suite. Run the documented scripts individually rather than using automated test discovery. [Full file index](../docs/file-index.md).

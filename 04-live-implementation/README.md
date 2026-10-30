@@ -1,6 +1,8 @@
 # Phase 4 — Live drone-to-laptop crack segmentation
 
-**Pi:** capture and transmit. **Laptop:** decode, associate telemetry, segment and display. **Pixhawk:** flight control and lidar interface.
+[Project overview](../README.md) · [Getting started](../docs/getting-started.md)
+
+This phase combines the trained model with live camera and sensor data. The Raspberry Pi captures and transmits video and telemetry, while the laptop decodes frames, associates distance readings, runs SegFormer and displays the results. Pixhawk provides flight control and the lidar interface.
 
 Start with [the ordered startup guide](docs/startup-sequence.md). Prerequisites are working Pi camera and dual-lidar tests, a shared network, compatible MediaMTX, a CUDA laptop and a trusted trained model package. The reception probe and preview do not require a model; the final inference path does require CUDA.
 
@@ -23,11 +25,11 @@ Keep this phase folder intact on both devices: entrypoints resolve sibling `shar
 
 <img src="../docs/images/project/flight-with-laptop.jpeg" alt="Airborne drone near a wall with the laptop showing raw video and a red crack overlay" width="440">
 
-*The drone and paired laptop display during a flight demonstration. The photographs and clips provide qualitative evidence of live operation; numerical performance remains documented separately.*
+*Flight demonstration with the original camera image and predicted crack overlay displayed on the ground-station laptop.*
 
 [Watch the animated demonstrations](../docs/flight-demonstrations.md) · [Handheld and flight photo gallery](../docs/project-gallery.md)
 
-## Outputs and limits
+## Dashboard outputs
 
 The dashboard pairs the same raw frame and processed overlay with frame IDs, inference timing, FPS, ranges and timing status. `--record` enables video output; `S` saves a snapshot and `Q` exits. Metadata and summaries are written under `phase4_results/` unless `--output` changes it.
 

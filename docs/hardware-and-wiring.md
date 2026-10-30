@@ -1,14 +1,14 @@
 # Hardware and wiring
 
-The project owner confirmed this wiring diagram as the reference for the upgraded build.
+The following diagram documents the confirmed power and signal connections of the upgraded inspection platform.
 
-![Confirmed Pixhawk and Raspberry Pi connections](images/hardware-wiring.png)
+![Power distribution and signal connections for Pixhawk, Raspberry Pi, camera and dual lidar sensors](images/hardware-wiring.png)
 
 | Item | Initial build | Upgraded build |
 |---|---|---|
 | Frame | F450 | F450 |
 | Motors | 1000 KV | 920 KV DJI; team reports 500 g+ thrust per motor |
-| ESCs | 40 A | Diagram labels 30 A typical |
+| ESCs | 40 A | 30 A typical, as labelled in the confirmed wiring diagram |
 | Controller and radio | Pixhawk 2.4.8; FlySky FS-i6 setup | Same project platform |
 | Camera and companion computer | No live model feed tested | IMX219 and Raspberry Pi 5 |
 | Ground lidar | — | TFmini-S → TELEM2 |
@@ -23,10 +23,9 @@ Mission Planner was used for configuration and tuning. An exported, verified fli
 
 ## Physical assembly
 
-<img src="images/project/drone-v2-front.jpeg" alt="Front view of the upgraded F450 showing camera mounting and landing gear" width="760">
+<table>
+<tr><td width="50%" align="center"><img src="images/project/drone-v2-front.jpeg" alt="Front view of the upgraded inspection aircraft." height="280"></td><td width="50%" align="center"><img src="images/project/drone-v2-top.jpeg" alt="Top view of the onboard electronics and camera connection." height="280"></td></tr>
+<tr><td>Front view of the upgraded inspection aircraft.</td><td>Top view of the onboard electronics and camera connection.</td></tr>
+</table>
 
-*Front view of the upgraded aircraft.*
-
-<img src="images/project/drone-v2-top.jpeg" alt="Top view of the Raspberry Pi enclosure and onboard wiring" width="760">
-
-*Top view of the mounted electronics. Refer to the connection diagram above for ports and power routing.*
+See the [project gallery](project-gallery.md) for additional photographs.

@@ -1,3 +1,5 @@
-# telemetry
+# Flight-controller and lidar diagnostics
 
-Run on Raspberry Pi: heartbeat_test.py, then Attitude_test.py, then lidar2_mavlink_test.py, one at a time. Stop each before the live sender. See ../../docs/mavlink-and-lidar-testing.md. These are manual hardware diagnostics, not automated test discovery targets.
+Run these manual checks on the Raspberry Pi in sequence: heartbeat reception, attitude messages, then both lidar readings. Each test must release the serial connection before the next test or the live sender starts.
+
+The [MAVLink and lidar guide](../../docs/mavlink-and-lidar-testing.md) provides the commands, sensor identities and expected results. These scripts interact with hardware and are not an automated unit-test suite.

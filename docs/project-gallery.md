@@ -1,65 +1,45 @@
-# Project photo gallery
+# Project gallery
 
-Photographs from the project’s development, testing and presentation. Captions describe visible content and the supplied project context. Photographs are preserved without edits; animated GIFs have optimized web encodings. Descriptive repository filenames and source/published hashes are recorded in [the image manifest](images/project/manifest.json).
+Photographs document aircraft development, subsystem integration, inspection tests and project presentation. Testing images show predicted overlays; they do not establish physical crack dimensions or quantitative accuracy.
 
-[Main project guide](../README.md) · [Animated demonstrations](flight-demonstrations.md)
+[Project overview](../README.md) · [Live demonstrations](flight-demonstrations.md)
 
-## Initial aircraft
+## Aircraft development
 
-<img src="images/project/drone-v1.jpeg" alt="Original F450 assembly" width="420">
+<table>
+<tr><th width="50%">Initial F450 assembly</th><th width="50%">Upgraded inspection aircraft</th></tr>
+<tr><td align="center"><img src="images/project/drone-v1.jpeg" alt="Initial F450 assembly" height="280"></td><td align="center"><img src="images/project/drone-v2-front.jpeg" alt="Upgraded inspection aircraft" height="280"></td> </tr>
+<tr><td>Early aircraft used during offline CNN and U-Net development.</td><td>Front view of the 920 KV platform with onboard camera integration.</td></tr>
+</table>
 
-The earlier aircraft build. CNN/U-Net work remained offline; no real drone-feed model test was performed in that stage.
+## Onboard integration and camera testing
 
-## Upgraded aircraft front view
+<table>
+<tr><th width="50%">Onboard electronics</th><th width="50%">Handheld camera test</th></tr>
+<tr><td align="center"><img src="images/project/drone-v2-top.jpeg" alt="Onboard electronics" height="280"></td><td align="center"><img src="images/project/handheld-testing.jpeg" alt="Handheld camera test" height="280"></td> </tr>
+<tr><td>Top view of the Pi enclosure, camera ribbon and aircraft electronics.</td><td>Manual positioning of the camera near a wall while the laptop displays segmentation.</td></tr>
+</table>
 
-<img src="images/project/drone-v2-front.jpeg" alt="Front view of upgraded drone" width="760">
+## Inspection tests
 
-The integrated 920 KV build with camera mounting and landing gear.
+<table>
+<tr><th width="50%">Close-range handheld test</th><th width="50%">Flight demonstration</th></tr>
+<tr><td align="center"><img src="images/project/handheld-testing-closeup.jpeg" alt="Close-range handheld test" height="280"></td><td align="center"><img src="images/project/flight-with-laptop.jpeg" alt="Flight demonstration" height="280"></td> </tr>
+<tr><td>Camera-to-laptop processing checked near the wall surface.</td><td>Aircraft in flight with original and processed views on the laptop.</td></tr>
+</table>
 
-## Upgraded aircraft top view
+## Live operation and laboratory presentation
 
-<img src="images/project/drone-v2-top.jpeg" alt="Top view of upgraded drone" width="760">
+<table>
+<tr><th width="50%">Airborne inspection</th><th width="50%">Laboratory demonstration</th></tr>
+<tr><td align="center"><img src="images/project/live-flight-testing.jpeg" alt="Airborne inspection" height="280"></td><td align="center"><img src="images/project/project-lab-overview.jpeg" alt="Laboratory demonstration" height="280"></td> </tr>
+<tr><td>External view of the aircraft and ground-station display during testing.</td><td>Aircraft, laptop display and project report presented together.</td></tr>
+</table>
 
-Pi enclosure, ribbon cable and onboard electronics viewed from above.
+## Project presentation
 
-## Handheld testing
-
-<img src="images/project/handheld-testing.jpeg" alt="Handheld drone and laptop displaying a segmentation overlay" width="440">
-
-The camera is positioned manually near the wall while a laptop displays a red predicted region. This is a qualitative test of the camera-to-model path.
-
-## Handheld testing close view
-
-<img src="images/project/handheld-testing-closeup.jpeg" alt="Closer view of handheld wall inspection" width="440">
-
-A closer view of the same type of test. The broad highlighted surface damage should not be interpreted as a validated crack-width measurement.
-
-## Flight and ground station
-
-<img src="images/project/flight-with-laptop.jpeg" alt="Drone in flight and paired laptop dashboard" width="440">
-
-The aircraft is airborne near the wall while the laptop displays raw and processed views.
-
-## Live testing during flight
-
-<img src="images/project/live-flight-testing.jpeg" alt="Airborne drone with laptop foreground" width="440">
-
-Another view of airborne testing and the laptop display. Sensor availability can change during a run; the photo is not a timing validation.
-
-## Lab project presentation
-
-<img src="images/project/project-lab-overview.jpeg" alt="Drone laptop and report in the lab" width="760">
-
-The aircraft, ground-station display and project report presented together.
-
-## Project and Black Books
-
-<img src="images/project/project-and-blackbooks.jpeg" alt="Drone transmitter laptop and bound project reports" width="500">
-
-Project hardware, radio transmitter, laptop and bound reports.
-
-## Team and guide
-
-<img src="images/project/team-and-guide.jpeg" alt="Project team and guide" width="760">
-
-The project team with their guide.
+<table>
+<tr><th width="50%">Hardware and project reports</th><th width="50%">Project team and guide</th></tr>
+<tr><td align="center"><img src="images/project/project-and-blackbooks.jpeg" alt="Hardware and project reports" height="280"></td><td align="center"><img src="images/project/team-and-guide.jpeg" alt="Project team and guide" height="280"></td> </tr>
+<tr><td>Aircraft, radio transmitter, laptop and bound project reports.</td><td>The project team with their academic guide.</td></tr>
+</table>

@@ -1,25 +1,25 @@
-# Animated flight demonstrations
+# Live inspection demonstrations
 
-These project GIFs document the live demonstration. Web copies are optimized for download size while retaining their dimensions, full durations and looping; frame rate and palette size are reduced. The main README also embeds the external flight view and the first ground-station screen recording.
+These recordings show camera-to-laptop segmentation during project testing. The dashboard presents the original camera frame on the left and the predicted crack overlay on the right, with processing statistics and available lidar readings below.
 
-The paired dashboard shows the raw frame at left, red predicted mask at right, and processing/range diagnostics below. These clips are qualitative evidence of operation, not a ground-truth accuracy benchmark or a full camera-to-screen timing measurement. The display labels its association as approximate message-time matching.
+## Ground-station segmentation display
 
-[Live implementation and startup](../04-live-implementation/README.md) · [Photo gallery](project-gallery.md)
+![Laptop dashboard displaying the camera image, predicted crack overlay and telemetry](images/project/flight-dashboard-1-web.gif)
 
-## Ground-station laptop screen view
+The ground-station laptop receives the camera stream and sensor data, runs SegFormer, and displays the inspection results.
 
-![Animated raw and processed camera views with range diagnostics](images/project/flight-dashboard-1-web.gif)
+## Additional dashboard recording
 
-Source: `Flight_test1.gif`. This is a ground-station laptop screen recording showing the raw camera feed, crack mask overlay, processing statistics and lidar information.
+![Additional laptop recording of live camera frames and segmentation overlays](images/project/flight-dashboard-2-web.gif)
 
-## Dashboard recording 2
+A second recording illustrates the dashboard output as the camera view changes.
 
-![Second animated paired dashboard recording](images/project/flight-dashboard-2-web.gif)
+## Inspection during flight
 
-A second project recording of the paired raw and processed display. Source filename: `Fight_test2.gif`.
+![External view of the drone and laptop during live wall inspection](images/project/live-flight-pov-web.gif)
 
-## Aircraft and laptop together
+The aircraft operates near the inspection surface while the laptop displays the streamed images and segmentation results.
 
-![Animated view of the airborne drone and laptop segmentation display](images/project/live-flight-pov-web.gif)
+The recordings demonstrate operation rather than measured accuracy. Frame-to-sensor association is approximate, and unavailable sensor readings remain marked as unavailable. See [results and limitations](results-and-limitations.md) for quantitative evidence. Web animations retain the full clip duration, with reduced frame rate and colour palette to improve loading.
 
-This external view shows the aircraft in flight and the laptop display together. Some moments show unavailable sensor diagnostics; the recording preserves the actual displayed behaviour.
+[Live setup](../04-live-implementation/README.md) · [Photo gallery](project-gallery.md) · [Project overview](../README.md)

@@ -1,5 +1,9 @@
 # Live system data flow
 
+The inspection pipeline has two inputs: camera video and flight-controller telemetry. Both reach the laptop, where SegFormer produces the crack mask and the dashboard displays associated distance readings.
+
+## Video and sensor processing
+
 ```mermaid
 flowchart TD
   C[IMX219 camera] -->|CSI| M[Pi camera stack and MediaMTX]

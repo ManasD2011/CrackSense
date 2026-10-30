@@ -1,8 +1,10 @@
 # Phase 1 — CNN and U-Net
 
-**Runs on:** training/offline inference computer. **Status:** historical baseline, not tested on live drone feed.
+[Project overview](../README.md) · [Getting started](../docs/getting-started.md)
 
-The initial build used F450, 1000 KV motors, 40 A ESCs, FS-i6 radio, Pixhawk 2.4.8 and LiPo power, tuned with Mission Planner. Stability and model accuracy motivated the later stages.
+This phase introduces the original convolutional models: a CNN for image-level crack classification and U-Net for pixel-level segmentation. Training and inference run on a development computer. These models were not tested on a live drone feed.
+
+The initial build used F450, 1000 KV motors, 40 A ESCs, FS-i6 radio, Pixhawk 2.4.8 and LiPo power, tuned with Mission Planner. Insufficient stability in this aircraft configuration and unsatisfactory model performance motivated the transition to SegFormer and upgraded hardware.
 
 | Path | Role |
 |---|---|
@@ -36,7 +38,7 @@ python -m pip install jupyterlab
 python -m jupyter lab
 ```
 
-Open the CNN notebook first and U-Net notebook second. Run them with the notebook directory as kernel working directory; their root-resolution cells use its parent. Inspect discovered class folders and class labels before training. Expected artifacts are model files in `saved_models/`, loss/metric plots and predictions. Training has not been rerun as part of this repository organization.
+Open the CNN notebook first and U-Net notebook second. Run them with the notebook directory as kernel working directory; their root-resolution cells use its parent. Inspect discovered class folders and class labels before training. Expected artifacts are model files in `saved_models/`, loss/metric plots and predictions. The published notebooks preserve the development workflow; training results have not been independently reproduced for this release.
 
 With both expected model files present, run from this phase root:
 
@@ -46,9 +48,9 @@ python api/main.py
 
 Open the local server URL printed by Flask. The demo is an offline computer application, not Pi deployment.
 
-## Historical supervision caveat
+## How the training targets were generated
 
-The U-Net notebook uses adaptive thresholding, CLAHE and morphological operations to generate targets from positive class images; negative images receive zero masks. This is pseudo-mask supervision. It must not be described as training against manually annotated masks. The notebook's assumptions about class-folder layout do not establish whether every release of the dataset lacks segmentation masks. SegFormer uses paired masks in a different workflow.
+The U-Net notebook uses adaptive thresholding, CLAHE and morphological operations to generate targets from positive class images; negative images receive zero masks. These automatically generated targets are called pseudo-masks; they are not manually annotated ground-truth masks. The notebook's assumptions about class-folder layout do not establish whether every release of the dataset lacks segmentation masks. SegFormer uses paired masks in a different workflow.
 
 Classification confidence and the demo's intensity labels are not validated structural severity measurements. Requirements are the original broad constraints, not a reproduced environment lock.
 

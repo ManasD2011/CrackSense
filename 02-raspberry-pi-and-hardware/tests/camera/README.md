@@ -1,3 +1,5 @@
-# camera
+# Camera diagnostics
 
-Camera diagnostics run on Raspberry Pi. Start with camera_fps_test.py (Picamera2). test_camera.py and camera_debug.py use OpenCV device probing; camera.py retains default device index 2. See ../../docs/camera-testing-and-calibration.md. Do not run these while MediaMTX owns the camera.
+Run these checks on the Raspberry Pi before starting the live stream. Begin with `camera_fps_test.py`, which uses Picamera2 to report capture performance. The OpenCV probes provide additional device diagnostics; check their selected camera index before use.
+
+Follow the [camera testing and calibration guide](../../docs/camera-testing-and-calibration.md) for commands and expected results. Stop MediaMTX and other camera applications before running a test.

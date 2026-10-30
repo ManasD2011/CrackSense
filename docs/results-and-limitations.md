@@ -48,4 +48,4 @@ Phase 3 received 24.57 FPS and completed inference at 16.86 FPS. Phase 4 recorde
 
 ## Visual demonstrations
 
-The newly included [photos](project-gallery.md) and [flight GIFs](flight-demonstrations.md) show handheld camera tests, airborne operation and laptop segmentation overlays. They provide qualitative demonstration evidence. They do not identify which saved numerical session a photograph belongs to or supply reference masks for quantitative accuracy. The screen also displays approximate timing and, in some moments, unavailable sensor status; retain that distinction when interpreting the clips.
+The project [photos](project-gallery.md) and [flight GIFs](flight-demonstrations.md) show handheld camera tests, airborne operation and laptop segmentation overlays. They provide qualitative demonstration evidence. They do not identify which saved numerical session a photograph belongs to or supply reference masks for quantitative accuracy. The screen also displays approximate timing and, in some moments, unavailable sensor status; retain that distinction when interpreting the clips.
