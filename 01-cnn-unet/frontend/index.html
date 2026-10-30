@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="CrackSense – AI-powered structural crack detection. UNet segmentation with crack intensity grading."/>
+<title>CrackSense | Structural Crack Detection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary": "#005762","tertiary-fixed": "#feb300","surface-bright": "#1f2b49",
+          "secondary-dim": "#ccd4ee","surface-dim": "#060e20","tertiary-container": "#feb300",
+          "surface-variant": "#192540","secondary-container": "#3f465c",
+          "on-secondary-container": "#c8d0ea","inverse-surface": "#faf8ff",
+          "tertiary-fixed-dim": "#eda600","tertiary-dim": "#eda600","surface": "#060e20",
+          "on-secondary-fixed": "#373f54","error-container": "#9f0519","on-tertiary-fixed-variant": "#5e4000",
+          "error": "#ff716c","surface-container-lowest": "#000000","on-error-container": "#ffa8a3",
+          "on-error": "#490006","inverse-primary": "#006976","outline": "#6d758c",
+          "on-primary-fixed-variant": "#005762","on-secondary": "#4a5167","on-tertiary-container": "#523700",
+          "on-primary-fixed": "#003840","surface-container-low": "#091328","secondary-fixed": "#dae2fd",
+          "on-tertiary": "#5e4000","primary-dim": "#00d4ec","background": "#060e20",
+          "primary-fixed": "#00e3fd","on-surface-variant": "#a3aac4","on-primary-container": "#004d57",
+          "error-dim": "#d7383b","secondary": "#dae2fd","on-secondary-fixed-variant": "#535b71",
+          "surface-tint": "#81ecff","on-surface": "#dee5ff","secondary-fixed-dim": "#ccd4ee",
+          "primary": "#81ecff","on-background": "#dee5ff","on-tertiary-fixed": "#382400",
+          "primary-container": "#00e3fd","inverse-on-surface": "#4d556b",
+          "surface-container-high": "#141f38","primary-fixed-dim": "#00d4ec",
+          "outline-variant": "#40485d","surface-container": "#0f1930",
+          "surface-container-highest": "#192540","tertiary": "#ffc563"
+        },
+        fontFamily: {"headline":["Manrope"],"body":["Manrope"],"label":["Manrope"]},
+        borderRadius: {"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
+      },
+    },
+  }
+</script>
+<style>
+  body { font-family: 'Manrope', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .glass-panel { background: rgba(25,37,64,0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+  .glow-primary { box-shadow: 0 0 15px rgba(129,236,255,0.15); }
+  .technical-tight { letter-spacing: -0.02em; }
+  /* Upload drag-over */
+  .drag-over { border-color: #81ecff !important; background: rgba(129,236,255,0.05); }
+  /* Spinner */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spin { animation: spin 1s linear infinite; }
+  /* Progress bar fill animation */
+  .bar-fill { transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+  /* Pulse dot */
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+  .pulse-dot { animation: pulse 1.5s ease-in-out infinite; }
+  /* Toast */
+  @keyframes slideIn { from{transform:translateY(20px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+  .toast { animation: slideIn 0.3s ease; }
+</style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden">
+
+<!-- ═══ SIDEBAR ════════════════════════════════════════════════════════════════ -->
+<aside class="fixed left-0 top-0 h-full w-[240px] z-50 bg-[#091328] border-r border-[#40485d]/15 shadow-2xl shadow-black/50 flex flex-col py-6 px-4">
+  <div class="mb-10 px-2 flex items-center gap-3">
+    <div class="w-10 h-10 bg-primary/10 rounded flex items-center justify-center border border-primary/20">
+      <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">precision_manufacturing</span>
+    </div>
+    <div>
+      <h1 class="text-xl font-bold text-[#dee5ff] tracking-tighter leading-none">CrackSense</h1>
+      <p class="text-[10px] text-primary uppercase tracking-widest mt-1 font-bold">Precision Lens</p>
+    </div>
+  </div>
+
+  <nav class="flex-1 space-y-2">
+    <a class="flex items-center gap-3 px-4 py-3 rounded text-[#81ecff] bg-[#192540] shadow-[0_0_10px_rgba(129,236,255,0.2)] font-semibold transition-all duration-300" href="#">
+      <span class="material-symbols-outlined">dashboard</span><span class="text-sm">Dashboard</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded text-[#a3aac4] hover:bg-[#1f2b49] hover:text-[#81ecff] transition-all duration-300 font-semibold" href="#">
+      <span class="material-symbols-outlined">analytics</span><span class="text-sm">Analysis</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded text-[#a3aac4] hover:bg-[#1f2b49] hover:text-[#81ecff] transition-all duration-300 font-semibold" href="#">
+      <span class="material-symbols-outlined">history</span><span class="text-sm">History</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded text-[#a3aac4] hover:bg-[#1f2b49] hover:text-[#81ecff] transition-all duration-300 font-semibold" href="#">
+      <span class="material-symbols-outlined">settings</span><span class="text-sm">Settings</span>
+    </a>
+  </nav>
+
+  <div class="mt-auto pt-6 border-t border-outline-variant/20">
+    <div class="flex items-center gap-3 px-2">
+      <div class="w-8 h-8 rounded-full bg-surface-bright flex items-center justify-center border border-outline-variant/30">
+        <span class="material-symbols-outlined text-sm text-on-surface-variant">account_circle</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-bold text-on-surface truncate">Admin Operator</p>
+        <p class="text-[10px] text-on-surface-variant truncate">Standard Access</p>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ═══ TOP HEADER ════════════════════════════════════════════════════════════ -->
+<header class="fixed top-0 right-0 w-[calc(100%-240px)] z-40 bg-[#091328]/70 backdrop-blur-xl border-b border-[#40485d]/15 flex justify-between items-center h-16 px-8">
+  <div class="flex items-center gap-4">
+    <span class="text-xs font-bold px-2 py-0.5 bg-primary/10 text-primary border border-primary/20 rounded">V4.2</span>
+    <h2 class="font-['Manrope'] tracking-[-0.02em] font-medium text-on-surface">Structural Analysis Mode</h2>
+  </div>
+  <div class="flex items-center gap-6">
+    <div class="relative group">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm group-focus-within:text-primary transition-colors">search</span>
+      <input class="bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary/50 text-sm rounded-none w-64 pl-10 h-9 transition-all text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search structures..." type="text"/>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="notif-btn">notifications</button>
+      <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">account_circle</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MAIN CONTENT ════════════════════════════════════════════════════════════ -->
+<main class="ml-[240px] pt-16 h-screen overflow-y-auto bg-surface">
+  <div class="p-8 max-w-[1600px] mx-auto space-y-8">
+
+    <!-- Page Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-[10px] font-extrabold text-primary tracking-[0.2em] uppercase">Analytical Engine V4.2</span>
+        </div>
+        <h1 class="text-4xl font-extrabold technical-tight text-on-surface">Crack Detection Analysis</h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="resetAnalysis()" class="px-5 h-11 border border-outline-variant/30 text-on-surface hover:bg-surface-bright transition-all font-semibold text-sm flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">add</span>New Analysis
+        </button>
+        <button onclick="downloadReport()" id="download-report-btn" disabled
+          class="px-5 h-11 bg-primary text-on-primary-container hover:bg-primary-container transition-all font-bold text-sm flex items-center gap-2 shadow-[0_0_20px_rgba(0,227,253,0.3)] disabled:opacity-40 disabled:cursor-not-allowed">
+          <span class="material-symbols-outlined text-sm">download</span>Download Report
+        </button>
+      </div>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div class="grid grid-cols-12 gap-6">
+
+      <!-- ──────────────── LEFT (9-col) ──────────────── -->
+      <div class="col-span-12 lg:col-span-9 space-y-6">
+
+        <!-- UPLOAD ZONE (shown initially) -->
+        <div id="upload-zone"
+          class="group relative aspect-[21/6] bg-surface-container-lowest border-2 border-dashed border-outline-variant/20 hover:border-primary/40 transition-all flex flex-col items-center justify-center p-8 cursor-pointer"
+          tabindex="0" role="button" aria-label="Upload structural image"
+          onclick="document.getElementById('file-input').click()"
+          ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)"
+          onkeydown="if(event.key==='Enter'||event.key===' ')document.getElementById('file-input').click()">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+          <div class="relative flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl text-primary-dim">cloud_upload</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface mb-1">Drag and drop structural scans</h3>
+            <p class="text-on-surface-variant text-sm font-medium">Supports PNG, JPG, BMP, TIFF, WebP (Max 16 MB)</p>
+          </div>
+          <input type="file" id="file-input" accept="image/*" hidden onchange="handleFileSelect(event)"/>
+        </div>
+
+        <!-- PREVIEW ZONE (hidden until file chosen) -->
+        <div id="preview-zone" class="hidden space-y-4">
+          <!-- Analyze button bar -->
+          <div class="flex items-center gap-4 p-4 bg-surface-container-low border border-outline-variant/15">
+            <div class="flex-1 flex items-center gap-3 min-w-0">
+              <span class="material-symbols-outlined text-primary">image</span>
+              <div class="min-w-0">
+                <p class="text-sm font-bold text-on-surface truncate" id="file-name-display">—</p>
+                <p class="text-[10px] text-on-surface-variant" id="file-size-display">—</p>
+              </div>
+            </div>
+            <button onclick="document.getElementById('file-input').click()" class="px-4 h-9 border border-outline-variant/30 text-on-surface-variant hover:text-primary text-xs font-semibold transition-colors">
+              Change
+            </button>
+            <button onclick="runAnalysis()" id="analyze-btn"
+              class="px-6 h-9 bg-primary text-on-primary-container font-bold text-sm flex items-center gap-2 hover:bg-primary-container transition-all shadow-[0_0_15px_rgba(0,227,253,0.3)]">
+              <span class="material-symbols-outlined text-sm">radar</span>Run Analysis
+            </button>
+          </div>
+
+          <!-- Image preview -->
+          <div class="grid grid-cols-2 gap-6">
+            <div class="glass-panel border border-outline-variant/10 overflow-hidden flex flex-col">
+              <div class="px-4 py-3 bg-surface-variant flex justify-between items-center">
+                <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Source Feed</span>
+                <span id="preview-meta" class="text-[10px] text-primary/80 font-mono">—</span>
+              </div>
+              <div class="relative flex-1 min-h-[300px] bg-black flex items-center justify-center">
+                <img id="preview-img" src="" alt="Selected image preview" class="max-w-full max-h-[300px] object-contain"/>
+              </div>
+            </div>
+            <div class="glass-panel border border-outline-variant/10 flex flex-col items-center justify-center min-h-[360px] border-dashed opacity-50">
+              <span class="material-symbols-outlined text-4xl text-on-surface-variant mb-2">crop_free</span>
+              <p class="text-xs text-on-surface-variant font-semibold">Detection Mask</p>
+              <p class="text-[10px] text-on-surface-variant/60">Awaiting analysis</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOADING ZONE -->
+        <div id="loading-zone" class="hidden">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="glass-panel border border-outline-variant/10 overflow-hidden flex flex-col">
+              <div class="px-4 py-3 bg-surface-variant flex justify-between items-center">
+                <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Source Feed</span>
+              </div>
+              <div class="relative flex-1 min-h-[380px] bg-black flex items-center justify-center">
+                <img id="loading-preview-img" src="" alt="Processing image" class="max-w-full max-h-[380px] object-contain opacity-60"/>
+              </div>
+            </div>
+            <div class="glass-panel border border-primary/20 flex flex-col items-center justify-center min-h-[380px] glow-primary">
+              <div class="w-12 h-12 border-2 border-primary/30 border-t-primary rounded-full spin mb-6"></div>
+              <p class="text-sm font-bold text-primary mb-6">Processing…</p>
+              <div class="space-y-3 w-48">
+                <div class="flex items-center gap-3" id="step-unet">
+                  <div class="w-2 h-2 rounded-full bg-primary pulse-dot"></div>
+                  <span class="text-xs text-on-surface-variant">UNet Segmentation</span>
+                </div>
+                <div class="flex items-center gap-3 opacity-40" id="step-overlay">
+                  <div class="w-2 h-2 rounded-full bg-outline"></div>
+                  <span class="text-xs text-on-surface-variant">Overlay Generation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESULTS ZONE -->
+        <div id="results-zone" class="hidden">
+          <div class="grid grid-cols-2 gap-6">
+            <!-- Original -->
+            <div class="glass-panel border border-outline-variant/10 overflow-hidden flex flex-col">
+              <div class="px-4 py-3 bg-surface-variant flex justify-between items-center">
+                <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Source Feed</span>
+                <button onclick="downloadImage('result-original-img','original.jpg')" class="text-[10px] text-primary/80 font-mono hover:text-primary flex items-center gap-1 transition-colors">
+                  <span class="material-symbols-outlined text-xs">download</span>Save
+                </button>
+              </div>
+              <div class="relative flex-1 min-h-[380px] bg-black flex items-center justify-center">
+                <img id="result-original-img" src="" alt="Original scan" class="max-w-full max-h-[380px] object-contain"/>
+              </div>
+            </div>
+            <!-- Detection Mask / Overlay -->
+            <div class="glass-panel border border-outline-variant/10 overflow-hidden flex flex-col glow-primary">
+              <div class="px-4 py-3 bg-surface-variant flex justify-between items-center">
+                <span class="text-[10px] font-bold tracking-widest text-primary uppercase">Detection Mask</span>
+                <div class="flex items-center gap-3">
+                  <span class="text-[10px] text-tertiary font-bold pulse-dot">ANALYSIS COMPLETE</span>
+                  <button onclick="downloadImage('result-overlay-img','crack_overlay.jpg')" class="text-[10px] text-primary/80 font-mono hover:text-primary flex items-center gap-1 transition-colors">
+                    <span class="material-symbols-outlined text-xs">download</span>Save
+                  </button>
+                </div>
+              </div>
+              <div class="relative flex-1 min-h-[380px] bg-black flex items-center justify-center">
+                <img id="result-overlay-img" src="" alt="Crack detection overlay" class="max-w-full max-h-[380px] object-contain"/>
+                <!-- Crack labels (populated dynamically) -->
+                <div id="crack-labels" class="absolute top-4 right-4 flex flex-col gap-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ERROR ZONE -->
+        <div id="error-zone" class="hidden p-6 bg-error-container/20 border border-error/30" role="alert">
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-error text-2xl mt-0.5">error</span>
+            <div>
+              <p class="font-bold text-error mb-1">Analysis Failed</p>
+              <p class="text-sm text-on-surface-variant" id="error-message-text">An unexpected error occurred.</p>
+              <p class="text-xs text-on-surface-variant/60 mt-1" id="error-hint-text"></p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /left col -->
+
+      <!-- ──────────────── RIGHT (3-col) ──────────────── -->
+      <div class="col-span-12 lg:col-span-3 space-y-6">
+
+        <!-- Status Report Card -->
+        <div class="bg-surface-container-highest border border-outline-variant/20 p-6 glow-primary">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="font-bold text-sm tracking-tight">Status Report</h3>
+            <span id="risk-badge" class="px-2 py-1 bg-surface-container-low text-on-surface-variant font-black text-[10px] rounded-sm">PENDING</span>
+          </div>
+          <div class="space-y-6">
+            <!-- Confidence -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <span class="text-xs text-on-surface-variant font-semibold">Confidence Score</span>
+                <span class="text-xl font-bold technical-tight text-primary" id="confidence-display">—</span>
+              </div>
+              <div class="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
+                <div class="h-full bg-primary bar-fill" id="confidence-bar" style="width:0%"></div>
+              </div>
+            </div>
+            <!-- Coverage + Intensity -->
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Coverage</p>
+                <p class="text-2xl font-bold technical-tight" id="coverage-display">—</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Intensity</p>
+                <p class="text-2xl font-bold technical-tight" id="intensity-display">—</p>
+              </div>
+            </div>
+            <!-- Assessment note -->
+            <div id="assessment-note" class="p-4 bg-surface-container-low border-l-4 border-outline-variant/40">
+              <p class="text-xs font-medium text-on-surface-variant leading-relaxed">
+                Upload an image to begin structural assessment.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analysis History -->
+        <div class="flex flex-col h-fit">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-on-surface-variant text-lg">history</span>
+            <h3 class="font-bold text-sm">Previous Analysis</h3>
+          </div>
+          <div id="history-list" class="space-y-3">
+            <p class="text-xs text-on-surface-variant/60 px-1">No analyses yet.</p>
+          </div>
+          <button onclick="clearHistory()" class="mt-4 w-full py-2 text-[10px] font-black uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors border border-outline-variant/20">
+            Clear Archive
+          </button>
+        </div>
+
+      </div><!-- /right col -->
+    </div><!-- /grid -->
+  </div><!-- /container -->
+</main>
+
+<!-- Toast notification -->
+<div id="toast" class="fixed bottom-6 right-6 z-50 hidden">
+  <div class="toast px-5 py-3 bg-surface-container-highest border border-outline-variant/30 text-sm font-semibold text-on-surface shadow-2xl flex items-center gap-3">
+    <span class="material-symbols-outlined text-base" id="toast-icon">info</span>
+    <span id="toast-text"></span>
+  </div>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

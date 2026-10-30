@@ -1,0 +1,30 @@
+/* CrackSense – minimal supplemental styles (primary design via Tailwind in index.html) */
+
+/* Drag-over highlight */
+.drag-over {
+  border-color: #81ecff !important;
+  background: rgba(129, 236, 255, 0.04);
+}
+
+/* Progress bar animated fill */
+.bar-fill {
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Spinner */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.9s linear infinite; }
+
+/* Pulse dot */
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.35;} }
+.pulse-dot { animation: pulse 1.5s ease-in-out infinite; }
+
+/* Toast slide-in */
+@keyframes slideIn {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.toast { animation: slideIn 0.25s ease; }
+
+/* Tight tracking utility for numbers */
+.technical-tight { letter-spacing: -0.02em; }

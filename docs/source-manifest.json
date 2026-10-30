@@ -1,0 +1,710 @@
+[
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/Dockerfile",
+    "destination": "01-cnn-unet/Dockerfile",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "9898fe1a8cddd4f078b7f8e1b42fa2c4935a5e08016e86e0ec7923ca2bafd9ea"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/requirements.txt",
+    "destination": "01-cnn-unet/requirements.txt",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "26624fade7c50bfc685cd9f80f9f9fbcae1c9b20c9350008a7c7ea5316d17240"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/api/main.py",
+    "destination": "01-cnn-unet/api/main.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "ab9cdaf67d826a3bc08652623b1e37fc3296675c2ab1dde97b178bf8a5f19c16"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/api/__init__.py",
+    "destination": "01-cnn-unet/api/__init__.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "6bcae2f1c5792584d49cb1b60c22300e26ac7d584a8731a9ba1f34f6be0ec1cf"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/frontend/index.html",
+    "destination": "01-cnn-unet/frontend/index.html",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "993d5193bf82d94e6487f6d8d3e63239f094fcf4db5dc690ff6659581753da49"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/notebooks/01_cnn_classification.ipynb",
+    "destination": "01-cnn-unet/notebooks/01_cnn_classification.ipynb",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "b015fdcd97404b89afff9ed04ab8899f30be095365f591b3330a54089d231ad7"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/notebooks/02_unet_segmentation.ipynb",
+    "destination": "01-cnn-unet/notebooks/02_unet_segmentation.ipynb",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "a7291c9f9b8113e77e84173ff366ddd3a358cd1e99263cdd4a3cd60696875c14"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/__init__.py",
+    "destination": "01-cnn-unet/src/__init__.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "694243414fd854455e9eed9eb9dd6529bdd63386b5d712cdd0cd2c341de415d4"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/api/routes/predict.py",
+    "destination": "01-cnn-unet/api/routes/predict.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "4f4ce1f9544770e5600dc2c4ad439143ccd45c379326e61dfea9148dcd738bd0"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/api/routes/__init__.py",
+    "destination": "01-cnn-unet/api/routes/__init__.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "0b0e197e6d4bb3482a2aeda0dafd2fb5e3f0fd348aad75881e626aac22286361"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/frontend/css/style.css",
+    "destination": "01-cnn-unet/frontend/css/style.css",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "6d85ba10269ca3c30da1802b9fe9a4dc59c01affb19e220bf3f562af2f514192"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/frontend/js/app.js",
+    "destination": "01-cnn-unet/frontend/js/app.js",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "1360f6ab9b1a42ce1a30ab1b58fcbf4a5eaae966cc6eaad0e3a5799de2750680"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/inference/classifier.py",
+    "destination": "01-cnn-unet/src/inference/classifier.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "7cbcee0a3c3b234940b095c6f067deb37a3c5b67c0bc0d5a0f39d0e4b5354953"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/inference/segmentor.py",
+    "destination": "01-cnn-unet/src/inference/segmentor.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "cfbfebdf2b9fd469072be1b7b16ddf8b8fb8f775fa1fdb7a77dff70a971f746f"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/inference/__init__.py",
+    "destination": "01-cnn-unet/src/inference/__init__.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "357a21e6f0aa79431dc107e716b835215403201f899e08a523cb8987e9d42344"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/models/cnn_model.py",
+    "destination": "01-cnn-unet/src/models/cnn_model.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "b13cb5c367780c76508b776f854d81adfb56cd8ad89f733f37f47986c3ca7450"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/models/unet_model.py",
+    "destination": "01-cnn-unet/src/models/unet_model.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "7395145b6621be86bc237d29fc4e997913a1387028218fa5a2063e365f04f2c6"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/models/__init__.py",
+    "destination": "01-cnn-unet/src/models/__init__.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "9c612dff2cbde344542577a20c0463d91ef1b3e1a967d54498f84e6e65000482"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/utils/config.py",
+    "destination": "01-cnn-unet/src/utils/config.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "3cae945e67d2f235ea3c1d7c6a7bb5af905b83ec4966767a4f94fc45d7797f7b"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/utils/image_utils.py",
+    "destination": "01-cnn-unet/src/utils/image_utils.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "ace575de6274b346ea440d7842d5485145b24243d3d03b69fef6cdb675e2f9ef"
+  },
+  {
+    "source": "Crack_Detection_Project/CNN_Unet_based_Crack_Detection_/src/utils/__init__.py",
+    "destination": "01-cnn-unet/src/utils/__init__.py",
+    "role": "Training computer / offline inference computer",
+    "source_sha256": "736356810f874eabb6b87921835be6a4b814e10e64ec7c5c4bf41aab87a4b45c"
+  },
+  {
+    "source": "RaspberryPi5_codebase/Attitude_test.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/telemetry/Attitude_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "55c293ded4ef6546f12726ad669d793cb5a1f7dc9acfa5b6e03a7c489f7f6f21"
+  },
+  {
+    "source": "RaspberryPi5_codebase/camera_debug.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/camera/camera_debug.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "ea21a48afeafef862851eb29745a612f41b47de7ba6504af92d1bba7c51cc1dc"
+  },
+  {
+    "source": "RaspberryPi5_codebase/camera_fps_test.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/camera/camera_fps_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "12d4f02b2b2cd3447bbe9c5c8502bb5abfe5a7ac30493c8d574c802760a45c1e"
+  },
+  {
+    "source": "RaspberryPi5_codebase/camera_stream.py",
+    "destination": "02-raspberry-pi-and-hardware/camera/camera_stream.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "c2fb8f5efba9c34f4a8b32c24929f8e86208cd614ad0c5203d49fe2fe09b99d4"
+  },
+  {
+    "source": "RaspberryPi5_codebase/heartbeat.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/telemetry/heartbeat.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "29fb1eed89373fa5bd26f31a7ec14d35343ea7df2ea2bb7f173dbd1e32a08003"
+  },
+  {
+    "source": "RaspberryPi5_codebase/heartbeat_test.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/telemetry/heartbeat_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "c324d78b237f7d4f33179890e6c1e1430b2b1a24492c37fb76ed04999e069405"
+  },
+  {
+    "source": "RaspberryPi5_codebase/Lidartest.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/direct-uart/Lidartest.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e4ca3f115bf0720ff6386324358e9cd9b0ce8d6a0e642086efe4fc42c8117bbf"
+  },
+  {
+    "source": "RaspberryPi5_codebase/loopbacktest.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/direct-uart/loopbacktest.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "1efba8bc9e52340a0ae0aca3fb20ef2c5acae9be1bf4e833bd1413c56d2ca5eb"
+  },
+  {
+    "source": "RaspberryPi5_codebase/optic_flow_v1.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/optic_flow_v1.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "32f703d77525af53536879c0db3f772f55b6555058b04bab0d7bddac244be5ad"
+  },
+  {
+    "source": "RaspberryPi5_codebase/telemtery_test.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/telemetry/telemtery_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "7a7098fe8c749678544f888a9ce69976cf22aa914cef8b97d7290f68e27e57f9"
+  },
+  {
+    "source": "RaspberryPi5_codebase/test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/direct-uart/test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "20c8684a7851e63458ea98617715e43de658e3a953544e00389b864f68f84c47"
+  },
+  {
+    "source": "RaspberryPi5_codebase/test_camera.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/camera/test_camera.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "801d43b7dd11713b6b30cda44708d578121859717f0c668e1740496fe035cffe"
+  },
+  {
+    "source": "RaspberryPi5_codebase/test_connection.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/direct-uart/test_connection.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "31153773308c2b5aa57d29a81c5ecdf05050f37c6eb3187bed689c24b951e42a"
+  },
+  {
+    "source": "RaspberryPi5_codebase/test_uart.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/direct-uart/test_uart.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "ccebac4c8e1ac507708988c41f4fc7aa166dd239f988e0b0bde70cdbb16ff256"
+  },
+  {
+    "source": "RaspberryPi5_codebase/drone_dashboard/app.py",
+    "destination": "02-raspberry-pi-and-hardware/dashboard/app.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "82c8dcee25e91b467e864eaf139bbc132e344198ffa03ba00c808ccc8ea2498e"
+  },
+  {
+    "source": "RaspberryPi5_codebase/drone_dashboard/app_feedonly.py",
+    "destination": "02-raspberry-pi-and-hardware/dashboard/app_feedonly.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "7b4d2ba51936817bbfd86726107e8dab9646f066ae03c363f64b7995927efaa3"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/camera.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/camera.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e6f23c825c72f16cf3ebbc29ed611c86e62f2c7c6aa8fdda430bf60ad9556805"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/camera2_web.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/camera2_web.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "83c613f2d038f5b2c65631144d53d134b0e6ccfe1eedaef23d1850dd7e485fe5"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/config.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/config.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/ekf.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/ekf.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/lidar2_mavlink_test.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/telemetry/lidar2_mavlink_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "1e539726a05ba9f497d5ddd510e9dff883f74524573338b4a5c193f950ec8a3e"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/lidar_mav_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/lidar_mav_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "f64c12b423997713240b0649e1babb94dff95c56038269519b1a1f575c1a644e"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/main.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/main.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/motion_estimator.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/motion_estimator.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/new_camera_web.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/new_camera_web.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "0b1c3a379ce5f2e1fe027e8aac0a8c381e2d6f8860d2cd2cb22e77c093502933"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/optical_flow.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/optical_flow.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "b77e6152e5b9fa5495bac79823a58090623d008e3b378e378ca181f109853d54"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/optical_flow_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/optical_flow_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "1920b184e4310204a731e51d06c7311859417cb5c9483c5b9435948943947e73"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/pixhawk_interface.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/pixhawk_interface.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/position_controller.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/position_controller.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/test_camera.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/test_camera.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "a77adfbb22ca9a17816047b08b9e577062bb4534123b84d880a8520c54dd2924"
+  },
+  {
+    "source": "RaspberryPi5_codebase/drone_dashboard/templates/index.html",
+    "destination": "02-raspberry-pi-and-hardware/dashboard/templates/index.html",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "fa5fb192c87bfc635cc1c15f5858892d0119b97c6581f6e952544d90a4cbdce2"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/aruco/aruco_externalnav_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/aruco/aruco_externalnav_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "fa1f1867b30ec7105639a44415ffdf6cd543bd722e69ea848854558c243d9b79"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/aruco/aruco_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/aruco/aruco_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "647ce13e10051cccd47d04469d8e5f7694ef37af19b4ae5e1320d551e563cd6b"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/aruco/aruco_test_90.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/aruco/aruco_test_90.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "f15b6aea317494c8949493a4284e689bba4d363a5f64f0bfb2e35763d7a5e0d0"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/aruco/updated_aruco_externalnav_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/aruco/updated_aruco_externalnav_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "af857276725c2dd113b3e1676241105378e032443cd6b3e4e221a5df13761ea2"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/guided/guided_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/guided/guided_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "0127658911746d35225459144444a31f5cc33f8971b1768fb5c2b45debf3bc9f"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/guided/test_motors.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/guided/test_motors.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "4ae8575aff1e3544f9e45a7a184ee6873801734e8ab64c8509b88666d1aba981"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/altitude.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/altitude.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "60f7d68434cf4cf3164b794e8b35cb6b9c28ffd4d59ab96e1f7aef59d8243d74"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/altitude_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/altitude_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/attitude_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/attitude_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "90e96fba6625e0b38b15a07ddd28b3135e7b7c4f86059eef74f14ad0fd81ef5a"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/battery_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/battery_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/common.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/common.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "d94361f71b9e5410a6ec3a050fb05fb6c3b4f93beb4779ae097c579d9c298acf"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/distance_sensor_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/distance_sensor_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "b03f240954eed9887bd2b0aa0807a10cc0b2d05b93ffa9a08c10c21237f792c0"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/gps_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/gps_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/heartbeat_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/heartbeat_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e538e1af67e89769991ddb2328f08a2043ed7a63803e89bd1834c9a5b4e352c3"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/imu_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/imu_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "2dc455fe09dccdb6bc6e25c45cc4e88cf7aff6e8efd6636d5fa0e33cddc40f2b"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/local_position_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/local_position_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "08a39a9eb371eb1d6f50cb017701b950e7d5367bbfdd4f865b86ef53f42c4d12"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/named_value_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/named_value_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/new_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/new_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "d8b0fb87281e6cc370c34220996749b00146ad622d844f7e944d586aea19a693"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/optical_flow_rad_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/optical_flow_rad_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/statustext_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/statustext_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/vision_position_test.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/vision_position_test.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/modes/ALT_HOLD.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/modes/ALT_HOLD.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "017eb5631d97dd020b811621b22611a1284891a51ee86cb3d30fc78c0abaa3b1"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/tests/modes/STABILIZE.py",
+    "destination": "02-raspberry-pi-and-hardware/experiments/VIO/tests/modes/STABILIZE.py",
+    "role": "Raspberry Pi; experimental when under experiments/",
+    "source_sha256": "32755d8c2dee71043c1150d30fe855f8299d28c9d51ace8eb9a79dfae0e4da28"
+  },
+  {
+    "source": "RaspberryPi5_codebase/VIO/camera.py",
+    "destination": "02-raspberry-pi-and-hardware/tests/camera/camera.py",
+    "role": "Pi or laptop V4L2/DirectShow helper; not Picamera2",
+    "source_sha256": "e6f23c825c72f16cf3ebbc29ed611c86e62f2c7c6aa8fdda430bf60ad9556805"
+  },
+  {
+    "source": "Crack_Detection_Project/DeepLearning_Model_Testing/CrackSense_Explained_B0.ipynb",
+    "destination": "03-segformer/walkthroughs/CrackSense_Explained_B0.ipynb",
+    "role": "Laptop; model walkthrough or experiment",
+    "source_sha256": "46f2a40452ffecd90b20ee56806d059eafa9556061f9d321df3656dc281df187"
+  },
+  {
+    "source": "Crack_Detection_Project/DeepLearning_Model_Testing/CrackSense_Explained_B1.ipynb",
+    "destination": "03-segformer/walkthroughs/CrackSense_Explained_B1.ipynb",
+    "role": "Laptop; model walkthrough or experiment",
+    "source_sha256": "29a8196ad9cd44b441427dda2ca9ce39c690ceb305c30b16c98954969a5a663b"
+  },
+  {
+    "source": "Crack_Detection_Project/DeepLearning_Model_Testing/crack_detection_vit.ipynb",
+    "destination": "03-segformer/training/crack_detection_vit.ipynb",
+    "role": "Training computer",
+    "source_sha256": "5b711f7a7e8bd8b2e5cc0696aae18bf53642e051bbc7deba71f632dc339b7685"
+  },
+  {
+    "source": "Crack_Detection_Project/DeepLearning_Model_Testing/crack_detection_vit_1.ipynb",
+    "destination": "03-segformer/training/crack_detection_vit_1.ipynb",
+    "role": "Training computer",
+    "source_sha256": "e15d99aa5df70a4862e0338e05d08ee635060e83fa5041ea463b39711f648b21"
+  },
+  {
+    "source": "Crack_Detection_Project/DeepLearning_Model_Testing/crack_tester.py",
+    "destination": "03-segformer/experiments/crack_tester.py",
+    "role": "Laptop; model walkthrough or experiment",
+    "source_sha256": "a49f45c4d049d650607a8d73a59e304ba93266f193427af3611a39b0d5d49735"
+  },
+  {
+    "source": "Crack_Detection_Project/DeepLearning_Model_Testing/DL_L1.ipynb",
+    "destination": "03-segformer/experiments/DL_L1.ipynb",
+    "role": "Laptop; model walkthrough or experiment",
+    "source_sha256": "fc280c0953575eff3ba97b131754fd1f9d3ab8ac1570e7a5b330f8acb499eabd"
+  },
+  {
+    "source": "Crack_Detection_Project/DeepLearning_Model_Testing/testing.ipynb",
+    "destination": "03-segformer/experiments/testing.ipynb",
+    "role": "Laptop; model walkthrough or experiment",
+    "source_sha256": "67c64e10e0596d04d4380567154ac67c221aead3b4e2902483c0e4823464bc12"
+  },
+  {
+    "source": "B2_Exp/CrackSense_Explained_B2.ipynb",
+    "destination": "03-segformer/walkthroughs/CrackSense_Explained_B2.ipynb",
+    "role": "Ground-station / training laptop",
+    "source_sha256": "23f1d4bb25d8ea204b4149415d9c6daaa5e8a398ff2bfbec9b5397a75c88c59d"
+  },
+  {
+    "source": "B2_Exp/CrackSense_Explained_B2_OriginalResolutionMasks.ipynb",
+    "destination": "03-segformer/walkthroughs/CrackSense_Explained_B2_OriginalResolutionMasks.ipynb",
+    "role": "Ground-station / training laptop",
+    "source_sha256": "c2351440a1beeda5289f03a205fccb6da620786bdea38ad624dbd4c6a310b7cf"
+  },
+  {
+    "source": "B2_Exp/Crack_Detector_main.py",
+    "destination": "03-segformer/inference/Crack_Detector_main.py",
+    "role": "Ground-station / training laptop",
+    "source_sha256": "ffc731c82aa2332dd9f3b6f3a92db0dad720dc0e5b6958e77a3f70d8aa9246bd"
+  },
+  {
+    "source": "B2_Exp/crack_video_inference.py",
+    "destination": "03-segformer/inference/crack_video_inference.py",
+    "role": "Ground-station / training laptop",
+    "source_sha256": "92ee58c6bf2e9688e7dc9516804aaabcd932573374c5e3ae073aaf4ec937bf8d"
+  },
+  {
+    "source": "B2_Exp/quantize_segformer.py",
+    "destination": "03-segformer/model-packaging/quantize_segformer.py",
+    "role": "Ground-station / training laptop",
+    "source_sha256": "ab962a82e3b95601db595055f14d93bc50fb83b8dbd67d14a2c44bd6a22129bb"
+  },
+  {
+    "source": "B2_Exp/Verify_quantised.py",
+    "destination": "03-segformer/model-packaging/Verify_quantised.py",
+    "role": "Ground-station / training laptop",
+    "source_sha256": "2c62db625466b1b8eac46c1b4d45bbabd2d83ed11b749b345a8a5b5bcf512ac8"
+  },
+  {
+    "source": "B2_Exp/compare_videos.py",
+    "destination": "03-segformer/model-packaging/compare_videos.py",
+    "role": "Ground-station / training laptop",
+    "source_sha256": "a10d7e51c98c1b1066f4fed9ed7114b197e8aaaa5b1853d8ea7d3f82fcb0911f"
+  },
+  {
+    "source": "B2_Exp/drone_pipeline_PI.py",
+    "destination": "03-segformer/experiments/drone_pipeline_PI.py",
+    "role": "Pi experimental file-watcher",
+    "source_sha256": "594dd4596dd9be025c7d6db10a517cab2cd9a5897613f1538edf2e8c08bd7818"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/laptop_dashboard.py",
+    "destination": "04-live-implementation/ground-station/laptop_dashboard.py",
+    "role": "Ground-station laptop",
+    "source_sha256": "be31d102eebddf2b8ca94cd781c2f722d93f33d8794ee36e42c8090ed699c189"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/model.py",
+    "destination": "04-live-implementation/ground-station/model.py",
+    "role": "Ground-station laptop",
+    "source_sha256": "25cee290088175113b47573e337bfd05bdbe7db966ee9bfb09b60664fd2294d4"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/phase4.yml",
+    "destination": "04-live-implementation/raspberry-pi/phase4.yml",
+    "role": "Raspberry Pi",
+    "source_sha256": "8865b04620d7f5f4478e18168e386a2aae9b2bcca4dfbbd77babc0dd03bd3abc"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/pi_telemetry_sender.py",
+    "destination": "04-live-implementation/raspberry-pi/pi_telemetry_sender.py",
+    "role": "Raspberry Pi",
+    "source_sha256": "b575394dbb5ef8ad8f05a834f1017aeaa33c35babc4f603a4e0e85c822014092"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/rtsp_video.py",
+    "destination": "04-live-implementation/ground-station/rtsp_video.py",
+    "role": "Ground-station laptop",
+    "source_sha256": "b731618c3782fee6150a81dfa8e308dc3e7de7b95bf82af1e2db01c7cec20540"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/telemetry_common.py",
+    "destination": "04-live-implementation/shared/telemetry_common.py",
+    "role": "Shared by Pi and ground station",
+    "source_sha256": "55b243f0f4fc17101a83e51dd837fa43926c333f7820c2bef8eeef71b2df47c6"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/timing.py",
+    "destination": "04-live-implementation/shared/timing.py",
+    "role": "Shared by Pi and ground station",
+    "source_sha256": "a781c42b4eff54df188c2893a4a7a63dde0e4b4bec3beffd8c13cb45ff37728e"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/tests/test_core.py",
+    "destination": "04-live-implementation/tests/test_core.py",
+    "role": "Development laptop; automated tests, no aircraft",
+    "source_sha256": "e4fc3ccf6fd00a3c11c17e2eb7f585448e1062f113c9dd19bfb8591bd7747262"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/tests/test_pipeline.py",
+    "destination": "04-live-implementation/tests/test_pipeline.py",
+    "role": "Development laptop; automated tests, no aircraft",
+    "source_sha256": "4b635ce2a3af53248c8604eed34d3eacc41d111e51781779acfe73e4f7f99968"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/tests/test_sender.py",
+    "destination": "04-live-implementation/tests/test_sender.py",
+    "role": "Development laptop; automated tests, no aircraft",
+    "source_sha256": "d48bf5f7d72ef46c0fbf442305ba9c7d166376fd900e40bb3a5be2fd3ffa6b8e"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/README.md",
+    "destination": "04-live-implementation/docs/original-phase4-notes.md",
+    "role": "Historical flat-package instructions; use startup-sequence.md",
+    "source_sha256": "f7f71b53300bfc7acc4c6768950336bee7797a0a4bd710daff2cd7ffe888c022"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4/VALIDATION.md",
+    "destination": "04-live-implementation/docs/historical-validation.md",
+    "role": "Historical software test record",
+    "source_sha256": "06b07f11487e1bc4abeb473ab341b3ea0b5d477aff05626bdbfda3c54800b542"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase1/benchmark_phase1.py",
+    "destination": "04-live-implementation/benchmarks/benchmark_phase1.py",
+    "role": "Laptop benchmark",
+    "source_sha256": "12193181cd31acf894e0d03206f11e499e4a51d043ecaa88f8246ff05f6f5756"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase1/README.md",
+    "destination": "04-live-implementation/benchmarks/README.md",
+    "role": "Laptop benchmark",
+    "source_sha256": "8f6ad159e33336d12d7ec518d9386cb1747ce83dca2c421ccb6c6d9cc3f6dc62"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase1/requirements-working.txt",
+    "destination": "04-live-implementation/benchmarks/requirements-working.txt",
+    "role": "Laptop benchmark",
+    "source_sha256": "223752c02dc126777d87fe663bbae5c66c1b3940ae024c3607b8e9e9ab3a702a"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase2/README.md",
+    "destination": "04-live-implementation/legacy/Phase2/README.md",
+    "role": "Historical live prototype; see phase README",
+    "source_sha256": "0a21e5db70d8fd4a862a4c2f256c42ce80a242e6a2b2f71aea2d390c7cb9433e"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase3/laptop_live_inference.py",
+    "destination": "04-live-implementation/legacy/Phase3/laptop_live_inference.py",
+    "role": "Historical live prototype; see phase README",
+    "source_sha256": "16a3bd9eeb3c84a6f6b3bed83e1ea3f15dc0cc859a52a3a045e860ca90d42f1f"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase3/laptop_live_inference_old.py",
+    "destination": "04-live-implementation/legacy/Phase3/laptop_live_inference_old.py",
+    "role": "Historical live prototype; see phase README",
+    "source_sha256": "7c6d1c34ec89b14cd867109a442a8a10ed383cf5fcf5b26532d8a06fcf13a65d"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase3/README.md",
+    "destination": "04-live-implementation/legacy/Phase3/README.md",
+    "role": "Historical live prototype; see phase README",
+    "source_sha256": "0cf73498e2aaae91194ce55fc2bea9280153b13966ad1953502527592d7bc0f3"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4_old/laptop_telemetry_receiver.py",
+    "destination": "04-live-implementation/legacy/Phase4_old/laptop_telemetry_receiver.py",
+    "role": "Historical live prototype; see phase README",
+    "source_sha256": "3d079eef7f1b2ae2bf368db3053d2ce73c6c4410a0dc9c8ebbdb6f11efe6f6e8"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4_old/pi_telemetry_sender.py",
+    "destination": "04-live-implementation/legacy/Phase4_old/pi_telemetry_sender.py",
+    "role": "Historical live prototype; see phase README",
+    "source_sha256": "97815c95c9fcb970ce914dec972459777d46005ea73a1b43095e0f795935fed2"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4_old/README.md",
+    "destination": "04-live-implementation/legacy/Phase4_old/README.md",
+    "role": "Historical live prototype; see phase README",
+    "source_sha256": "de1dd5fbcbb8b469ead393bd23a7b174dffe06c27f4354173724c33387615b15"
+  },
+  {
+    "source": "B2_Exp/Live_Implementation/Phase4_old/telemetry_common.py",
+    "destination": "04-live-implementation/legacy/Phase4_old/telemetry_common.py",
+    "role": "Historical live prototype; see phase README",
+    "source_sha256": "55b243f0f4fc17101a83e51dd837fa43926c333f7820c2bef8eeef71b2df47c6"
+  },
+  {
+    "source": "B2_Exp/phase1_results/summary.json",
+    "destination": "04-live-implementation/examples/phase1-summary.json",
+    "role": "Recorded result; not a new benchmark",
+    "source_sha256": "6019692d6c1be29d88fa168bcaea2e91ecc25410aa6e0a87d54a3a74bf8ecbc4"
+  },
+  {
+    "source": "B2_Exp/phase3_results/20261012_161624/summary.json",
+    "destination": "04-live-implementation/examples/phase3-summary.json",
+    "role": "Recorded result; not a new benchmark",
+    "source_sha256": "cdda6f0d6eaffe7b8753e2ee6d5572b319d91bfc9725db80e2fec33ab829e8d5"
+  },
+  {
+    "source": "B2_Exp/phase4_results/20261019_171412_3e65d4/summary.json",
+    "destination": "04-live-implementation/examples/phase4-summary.json",
+    "role": "Recorded result; not a new benchmark",
+    "source_sha256": "af7ea519ed2508db4bb92568bdbbfe23112948a9317bf0281623c07cd910b97e"
+  },
+  {
+    "source": "BlackBook_docs/Corrected Pixhawk Wiring Diagram.png",
+    "destination": "docs/images/hardware-wiring.png",
+    "role": "Confirmed hardware diagram",
+    "source_sha256": "33009851253217f19e2bbbedc820915a91d9df646c498e187847847addcab56a"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "received_frames": 3269,
+  "displayed_or_probed_results": 2228,
+  "video_time_mapped_results": 2061,
+  "both_ranges_matched_results": 2026,
+  "accepted_telemetry": 2749,
+  "rejected_telemetry": 0,
+  "telemetry_sequence_gaps": 0,
+  "reconnects": 0,
+  "output_dropped_items": 0,
+  "recorded_frame_sets": 2228,
+  "error": null,
+  "last_video_error": "",
+  "last_packet_error": "",
+  "elapsed_s": 131.45100210001692,
+  "physical_timing_validated": false,
+  "gate": "MAPPING_OBSERVED_REQUIRES_HARDWARE_VALIDATION",
+  "processing_last_10000_count": 2228,
+  "processing_mean_ms": 23.748464631956914,
+  "processing_p95_ms": 29.9657
+}

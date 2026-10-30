@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Drone Sensor Dashboard</title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            background: #111;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        /* ==================================================
+           HEADER
+           ================================================== */
+
+        header {
+
+            background: #1b1b1b;
+
+            padding: 15px;
+
+            text-align: center;
+
+            border-bottom: 1px solid #333;
+
+        }
+
+
+        header h1 {
+
+            margin: 0;
+
+            font-size: 24px;
+
+        }
+
+
+        /* ==================================================
+           CAMERA GRID
+           ================================================== */
+
+        .camera-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+            padding: 15px;
+
+        }
+
+
+        .camera-card {
+
+            background: #1b1b1b;
+
+            border-radius: 10px;
+
+            padding: 10px;
+
+            overflow: hidden;
+
+        }
+
+
+        .camera-card h2 {
+
+            font-size: 18px;
+
+            margin: 5px 0 10px 5px;
+
+        }
+
+
+        .camera-card img {
+
+            width: 100%;
+
+            display: block;
+
+            border-radius: 6px;
+
+            background: black;
+
+        }
+
+
+        /* ==================================================
+           LIDAR
+           ================================================== */
+
+        .lidar-card {
+
+            margin: 0 15px 15px 15px;
+
+            padding: 20px;
+
+            background: #1b1b1b;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+        }
+
+
+        .lidar-title {
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .distance {
+
+            font-size: 55px;
+
+            font-weight: bold;
+
+        }
+
+
+        .unit {
+
+            font-size: 22px;
+
+        }
+
+
+        .status {
+
+            margin-top: 10px;
+
+            color: #aaa;
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+           ================================================== */
+
+        @media(max-width: 800px) {
+
+            .camera-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Raspberry Pi 5 Drone Dashboard
+        </h1>
+
+    </header>
+
+
+    <!-- ======================================================
+     CAMERAS
+     ======================================================= -->
+
+    <div class="camera-grid">
+
+
+        <!-- IMX219 -->
+
+        <div class="camera-card">
+
+            <h2>
+                IMX219 — Downward Camera
+            </h2>
+
+            <img src="/camera/imx" alt="IMX219 Camera">
+
+        </div>
+
+
+        <!-- USB CAMERA -->
+
+        <div class="camera-card">
+
+            <h2>
+                USB Webcam — Main Camera
+            </h2>
+
+            <img src="/camera/usb" alt="USB Webcam">
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ======================================================
+     LIDAR
+     ======================================================= -->
+
+    <div class="lidar-card">
+
+        <div class="lidar-title">
+
+            1D LiDAR Distance
+
+        </div>
+
+
+        <div>
+
+            <span id="distance" class="distance">
+                ---
+            </span>
+
+            <span class="unit">
+                m
+            </span>
+
+        </div>
+
+
+        <div id="status" class="status">
+            Waiting for LiDAR...
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+     JAVASCRIPT
+     ======================================================= -->
+
+    <script>
+
+
+        function updateLidar() {
+
+
+            fetch("/api/lidar")
+
+
+                .then(response => response.json())
+
+
+                .then(data => {
+
+
+                    const distanceElement =
+                        document.getElementById(
+                            "distance"
+                        );
+
+
+                    const statusElement =
+                        document.getElementById(
+                            "status"
+                        );
+
+
+                    if (
+                        data.distance_m !== null
+                    ) {
+
+
+                        distanceElement.innerText =
+                            data.distance_m.toFixed(2);
+
+
+                        statusElement.innerText =
+                            "LiDAR data received";
+
+
+                    }
+
+                    else {
+
+
+                        distanceElement.innerText =
+                            "---";
+
+
+                        statusElement.innerText =
+                            "Waiting for LiDAR...";
+
+                    }
+
+
+                })
+
+
+                .catch(error => {
+
+
+                    document.getElementById(
+                        "status"
+                    ).innerText =
+                        "LiDAR connection error";
+
+
+                    console.log(error);
+
+
+                });
+
+        }
+
+
+        setInterval(
+            updateLidar,
+            100
+        );
+
+
+        updateLidar();
+
+
+    </script>
+
+
+</body>
+
+</html>
