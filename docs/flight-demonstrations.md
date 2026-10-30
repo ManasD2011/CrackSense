@@ -4,13 +4,19 @@ These recordings show camera-to-laptop segmentation during project testing. The 
 
 ## Ground-station segmentation display
 
-![Laptop dashboard displaying the camera image, predicted crack overlay and telemetry](images/project/flight-dashboard-1-web.gif)
+<table>
+<tr><th width="50%" align="center">Raw</th><th width="50%" align="center">Processed</th></tr>
+<tr><td colspan="2"><img src="images/project/flight-dashboard-1-web.gif" alt="Raw camera frame on the left and processed crack segmentation overlay on the right" width="560"></td></tr>
+</table>
 
 The ground-station laptop receives the camera stream and sensor data, runs SegFormer, and displays the inspection results.
 
 ## Additional dashboard recording
 
-![Additional laptop recording of live camera frames and segmentation overlays](images/project/flight-dashboard-2-web.gif)
+<table>
+<tr><th width="50%" align="center">Raw</th><th width="50%" align="center">Processed</th></tr>
+<tr><td colspan="2"><img src="images/project/flight-dashboard-2-web.gif" alt="Raw camera frame on the left and processed crack segmentation overlay on the right" width="560"></td></tr>
+</table>
 
 A second recording illustrates the dashboard output as the camera view changes.
 

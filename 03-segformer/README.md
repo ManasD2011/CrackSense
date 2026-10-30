@@ -22,6 +22,8 @@ This phase covers transformer-based crack segmentation with SegFormer. The team 
 
 *Handheld camera testing with segmentation on the laptop. The predicted overlay illustrates deployment behaviour; quantitative model performance is reported separately.*
 
+**Dashboard panels:** **Raw** (left) shows the original camera frame; **Processed** (right) shows the predicted crack segmentation overlay.
+
 ## Environment
 
 Create a dedicated virtual environment. Install a compatible PyTorch/CUDA build using [the official selector](https://pytorch.org/get-started/locally/), then install `03-segformer/requirements.txt`. Requirements list imported dependencies, not a fully reproduced lockfile. Keep the TensorFlow and Pi environments separate. For full-model checkpoint loading, retain the producing PyTorch/Transformers environment when possible.

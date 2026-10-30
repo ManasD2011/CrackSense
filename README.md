@@ -34,7 +34,12 @@ The system uses an F450 quadcopter equipped with a Raspberry Pi 5, an IMX219 cam
 </tr>
 <tr>
 <td align="center" valign="middle"><img src="docs/images/project/live-flight-pov-web.gif" alt="Drone operating near a wall while the ground-station laptop displays live inspection results" width="210"></td>
-<td align="center" valign="middle"><img src="docs/images/project/flight-dashboard-1-web.gif" alt="Laptop screen recording showing the original camera frame, red predicted crack mask and telemetry" width="560"></td>
+<td align="center" valign="middle">
+<table>
+<tr><th width="50%" align="center">Raw</th><th width="50%" align="center">Processed</th></tr>
+<tr><td colspan="2"><img src="docs/images/project/flight-dashboard-1-web.gif" alt="Raw camera frame on the left and processed crack segmentation overlay on the right" width="560"></td></tr>
+</table>
+</td>
 </tr>
 <tr>
 <td>External view of the aircraft and laptop during a flight demonstration.</td>

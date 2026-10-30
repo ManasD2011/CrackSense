@@ -31,6 +31,8 @@ Keep this phase folder intact on both devices: entrypoints resolve sibling `shar
 
 ## Dashboard outputs
 
+**Dashboard panels:** **Raw** (left) shows the original camera frame; **Processed** (right) shows the predicted crack segmentation overlay.
+
 The dashboard pairs the same raw frame and processed overlay with frame IDs, inference timing, FPS, ranges and timing status. `--record` enables video output; `S` saves a snapshot and `Q` exits. Metadata and summaries are written under `phase4_results/` unless `--output` changes it.
 
 Matching is approximate message-time association. A working probe does not certify exposure-to-lidar acquisition alignment. Read [timing](docs/timing-and-sensor-association.md), [troubleshooting](docs/troubleshooting.md), and [recorded results](../docs/results-and-limitations.md).

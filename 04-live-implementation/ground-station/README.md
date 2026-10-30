@@ -2,6 +2,8 @@
 
 The laptop receives camera frames and telemetry, runs SegFormer, and displays the original image alongside the predicted crack overlay and distance readings.
 
+**Dashboard panels:** **Raw** (left) shows the original camera frame; **Processed** (right) shows the predicted crack segmentation overlay.
+
 | Module | Responsibility |
 |---|---|
 | `laptop_dashboard.py` | Reception checks, preview, GPU inference, display and recording |
